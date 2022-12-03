@@ -1,8 +1,9 @@
-import axios from 'axios';
 import React, { useEffect } from 'react';
-
+import ParksList from './containers/parks-list';
 import './App.css';
 import Header from './containers/header-component';
+import ParkPage from './containers/park-page'
+
 
 function App() {
   const fetchParksList = async () => {
@@ -14,15 +15,15 @@ function App() {
     fetchParksList();
   }, [])
   return (
-    <div>
-      <Header />
-      <h3>Find your next National Park Adventure Below:</h3>
-      <ul>
-      
-      </ul>
-    </div>
+    // <div>
+    //   <Header />
+    //   <h3>Find your next National Park Adventure Below:</h3>
 
-  );
+    // </div>
+<div>
+  <ParkPage />
+</div>
+);
 }
 
 export default App;
