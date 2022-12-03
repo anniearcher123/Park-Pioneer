@@ -14,13 +14,13 @@ const Header = () => {
                 <h2>Park Planner</h2>
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
-                        <a className="nav-link" to="/">Home</a>
+                        <NavLink className="nav-link" to="/">Home</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" href="/calendar">My Calendar</NavLink>
+                        <NavLink className="nav-link" to="/calendar">My Calendar</NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" to="/discover">Live Feeds</a>
+                        <NavLink className="nav-link" to="/discover">Live Feeds</NavLink>
                     </li>
                 </ul>
             </div>
