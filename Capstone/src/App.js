@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import ParksList from './containers/parks-list';
-import './App.css';
-import Header from './containers/header-component';
-
-
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./containers/header-component";
+import Login from "./containers/login";
 
 function App() {
   const fetchParksList = async () => {
@@ -20,8 +21,13 @@ function App() {
       <Header />
       <h3>Find your next National Park Adventure Below:</h3>
       <ParksList />
+    <BrowserRouter>
+      <Routes>
+        <Header />
+        <Route path="/src/containers/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
     </div>
-
   );
 }
 
