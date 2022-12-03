@@ -1,6 +1,8 @@
 import React from "react";
+import Header from "./header-component";
 
 const Login = () => {
+  <Header />;
   // sign up form
   //   let [authMode, setAuthMode] = useState("signin");
 

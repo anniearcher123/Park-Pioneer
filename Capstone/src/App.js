@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import Header from "./containers/header-component";
-import Login from "./containers/login";
+// import Login from "./containers/login";
 import Footer from "./containers/footer-component";
 
 function App() {
