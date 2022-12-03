@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import Header from './containers/header-component';
+import Home from './containers/home-page'
 import MyCalendar from './containers/calendar';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppContext} from "./context/context";
@@ -15,7 +15,7 @@ function App() {
     <AppContext.Provider value={{Events, SetEvents, isLoggedIn, SetIsLoggedIn}}>
       <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Header/>}/>
+            <Route path="/" element={<Home/>}/>
             <Route path="/calendar" element={<MyCalendar/>} />
         </Routes>
       </BrowserRouter>
