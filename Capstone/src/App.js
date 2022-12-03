@@ -1,29 +1,25 @@
-import React, { useEffect } from 'react';
-import ParksList from './containers/parks-list';
-import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./containers/header-component";
-import Login from "./containers/login";
+import React, {useState} from 'react';
+import './App.css';
+import Header from './containers/header-component';
+import MyCalendar from './containers/calendar';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AppContext} from "./context/context";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
-  const fetchParksList = async () => {
-    const response = await fetch("https://developer.nps.gov/api/v1/parks?&api_key=8vJFyAsrGu6yLrJbygM2i5KDd5SNmyQNri1phITm")
-    const data = await response.json();
-    console.log(data)
-    
-  }
-  useEffect(() => {
-    fetchParksList();
-  }, [])
+  const [Events, SetEvents] = useState([])
+  const [isLoggedIn, SetIsLoggedIn] = useState(false);
+
   return (
-
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Header />} />
-        <Route path="/src/containers/login" element={<Login />} />
-      </Routes>
-    </BrowserRouter>
-
+    <AppContext.Provider value={{Events, SetEvents, isLoggedIn, SetIsLoggedIn}}>
+      <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Header/>}/>
+            <Route path="/calendar" element={<MyCalendar/>} />
+        </Routes>
+      </BrowserRouter>
+    </AppContext.Provider>
   );
 }
 
