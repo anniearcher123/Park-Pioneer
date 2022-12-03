@@ -5,13 +5,13 @@ const ParksList = () => {
     
     return(
         <div>
-            {data.map((park) => {
+            {/* {data.map((park) => {
                 return(
                     <div className="parks-list">
                         <h6>{park.fullName}</h6>
                     </div>
                 )
-            })}
+            })} */}
         </div>
     )
 }

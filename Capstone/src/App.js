@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import ParksList from './containers/parks-list';
-import React from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./containers/header-component";
@@ -17,17 +16,14 @@ function App() {
     fetchParksList();
   }, [])
   return (
-    <div>
-      <Header />
-      <h3>Find your next National Park Adventure Below:</h3>
-      <ParksList />
+
     <BrowserRouter>
       <Routes>
-        <Header />
+        <Route path="/" element={<Header />} />
         <Route path="/src/containers/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
-    </div>
+
   );
 }
 
