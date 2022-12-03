@@ -40,7 +40,7 @@ const events = [
 ];
 
 function MyCalendar() {
-    const {isLoggedIn, SetIsLoggedIn} = useContext(AppContext);
+    const {Events, SetEvents} = useContext(AppContext);
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
     const [allEvents, setAllEvents] = useState(events);
 
@@ -69,6 +69,10 @@ function MyCalendar() {
         console.log(allEvents)
     }
 
+    function handleEventSelection (e) {
+        console.log(e.target)
+    }
+
     return (
         <div>
             <Header/>
@@ -77,7 +81,7 @@ function MyCalendar() {
                 <h2>Add Event</h2>
                 <div className="d-flex">
                     <div className="col">
-                        <input type="text" require className="" placeholder="Add Title" value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
+                        <input type="text" required className="" placeholder="Add Title" value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
                         
                         <DatePicker 
                             popperPlacement="bottom position-absolute" 
@@ -89,6 +93,7 @@ function MyCalendar() {
                             timeIntervals={20}
                             timeCaption="time"
                             dateFormat="MMMM d, yyyy h:mm aa"/>
+                            
                             
                         <DatePicker 
                             popperPlacement="bottom position-absolute" 
@@ -108,7 +113,13 @@ function MyCalendar() {
                         </button>
                     </div>
                 </div>
-                <Calendar localizer={localizer} events={allEvents} startAccessor="start" endAccessor="end" style={{ height: 500, margin: "50px" }} />
+                <Calendar 
+                    localizer={localizer} 
+                    events={allEvents} 
+                    startAccessor="start" 
+                    endAccessor="end" 
+                    onSelectEvent={handleEventSelection}
+                    style={{ height: 500, margin: "50px" }} />
             </div>
         </div>
     );
