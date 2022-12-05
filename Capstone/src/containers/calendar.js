@@ -21,31 +21,16 @@ const localizer = dateFnsLocalizer({
     locales,
 });
 
-const events = [
-    {
-        title: "Test",
-        start: new Date(2022, 11, 1, 1, 0, 0),
-        end: new Date(2022, 11, 1, 10, 3,0)
-    },
-    {
-        title: "Vacation",
-        start: new Date(2022, 6, 7),
-        end: new Date(2022, 6, 10),
-    },
-    {
-        title: "Conference",
-        start: new Date(2022, 6, 20),
-        end: new Date(2022, 6, 23),
-    },
-];
+
 
 function MyCalendar() {
-    const {Events, SetEvents} = useContext(AppContext);
-    const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
-    const [allEvents, setAllEvents] = useState(events);
+    const {Events, SetEvents, newEvent, setNewEvent, allEvents, setAllEvents} = useContext(AppContext);
+    const [selectedEvent, setSelectedEvent] = useState(undefined)
+    const [updatedEvent, setUpdatedEvent] = useState(undefined)
+    const [modalState, setModalState] = useState(false)
 
     function handleAddEvent() {
-        
+        if (newEvent.title !== "" && newEvent.start !== "" && newEvent.end !== ""){
         for (let i=0; i<allEvents.length; i++){
 
             const d1 = new Date (allEvents[i].start);
@@ -66,11 +51,95 @@ function MyCalendar() {
         
         
         setAllEvents([...allEvents, newEvent]);
+        setNewEvent({ title: "", start: "", end: "" })
         console.log(allEvents)
+    } else {
+            alert('Complete all fields')
+            console.log(allEvents)
+        }
     }
 
     function handleEventSelection (e) {
-        console.log(e.target)
+        setUpdatedEvent(e)
+        setSelectedEvent(e)
+        setModalState(true)
+    }
+
+    function deleteEvent () {
+        let deleteThis = allEvents.filter(x => x !== selectedEvent)
+        setAllEvents(deleteThis);
+        closeModal()
+    }
+
+    function updateEvent () {
+        let updateThis = allEvents.filter(x => x !== selectedEvent)
+        updateThis.push(updatedEvent)
+        console.log(updateThis)
+        setAllEvents(updateThis)
+        closeModal()
+    }
+
+    function closeModal () {
+        setSelectedEvent(undefined)
+        setModalState(false)
+    }
+
+    const Modal = () => {
+        return (
+           <div className={`modal-${modalState === true ? 'show' : 'hide'}`}>
+              <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title">{selectedEvent.title}</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={closeModal}>
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            <form>
+                                <div className="form-group">
+                                    <label for='startDate'>Start Date:</label>
+                                    <DatePicker 
+                                        id="startDate"
+                                        popperPlacement="position-absolute" 
+                                        placeholderText={selectedEvent.start} 
+                                        selected={updatedEvent.start} 
+                                        onChange={(start) => setUpdatedEvent({ ...updatedEvent, start })} 
+                                        showTimeSelect
+                                        timeFormat="HH:mm"
+                                        timeIntervals={20}
+                                        timeCaption="time"
+                                        dateFormat="MMMM d, yyyy h:mm aa"
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label for="endDate">End Date:</label>
+                                    <DatePicker 
+                                        id="endDate"
+                                        popperPlacement="position-absolute" 
+                                        className="mb-3" 
+                                        popperClassName="" 
+                                        placeholderText={selectedEvent.end}
+                                        selected={updatedEvent.end} 
+                                        onChange={(end) => setUpdatedEvent({ ...updatedEvent, end })} 
+                                        showTimeSelect
+                                        timeFormat="HH:mm"
+                                        timeIntervals={20}
+                                        timeCaption="time"
+                                        dateFormat="MMMM d, yyyy h:mm aa"
+                                    />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" className="btn btn-primary" onClick={updateEvent}>Update event</button>
+                            <button type="button" className="btn btn-danger" onClick={deleteEvent}>Delete event</button>
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={closeModal}>Close</button>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        )
     }
 
     return (
@@ -84,7 +153,7 @@ function MyCalendar() {
                         <input type="text" required className="" placeholder="Add Title" value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
                         
                         <DatePicker 
-                            popperPlacement="bottom position-absolute" 
+                            popperPlacement="position-absolute" 
                             placeholderText="Start Date"  
                             selected={newEvent.start} 
                             onChange={(start) => setNewEvent({ ...newEvent, start })} 
@@ -96,7 +165,7 @@ function MyCalendar() {
                             
                             
                         <DatePicker 
-                            popperPlacement="bottom position-absolute" 
+                            popperPlacement="position-absolute" 
                             className="mb-3" 
                             popperClassName="" 
                             placeholderText="End Date" 
@@ -113,6 +182,7 @@ function MyCalendar() {
                         </button>
                     </div>
                 </div>
+                {selectedEvent && <Modal />}
                 <Calendar 
                     localizer={localizer} 
                     events={allEvents} 
