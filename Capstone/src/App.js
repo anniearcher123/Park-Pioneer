@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Header from "./containers/header-component";
+import Footer from "./containers/footer-component";
 import MyCalendar from "./containers/calendar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppContext } from "./context/context";

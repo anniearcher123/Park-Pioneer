@@ -1,21 +1,23 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
     <footer>
-      <div className="footer">
-        {/* <a
-          class="btn text-white"
-          style="background-color: #3b5998;"
-          href="#!"
-          role="button"
-        >
-          <i class="fab fa-facebook-f"></i>
-        </a> */}
-        <h4>321-456-7890</h4>
-        <h4>parkshelp@parks.gov</h4>
+      <div>
+        <div className="footer-header">
+          <h2>312-456-7890</h2>
+          <h2>parkshelp@parks.gov</h2>
+          <ul className="nav justify-content-center">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/">
+                Home
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </div>
       {`Copyright © ANNIETAYLORJOSEPH ${year}`}
     </footer>
