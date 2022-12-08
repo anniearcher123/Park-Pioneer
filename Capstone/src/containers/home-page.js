@@ -7,6 +7,7 @@ const Home = () => {
     return(
         <div>
             <Header />
+            <h1>Pick a National Park to get started:</h1>
             <ParksList />
         </div>
     )
