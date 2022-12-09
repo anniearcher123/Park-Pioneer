@@ -50,8 +50,8 @@ h2 {
  .jumbotron {
   display: grid;
   background-image: url("./images/north-cascades-national-park-picture-lake-mount-shuksan_4x3.webp");
-  -webkit-filter: blur(2px);
-  filter: blur(2px);
+  /* -webkit-filter: blur(2px);
+  filter: blur(2px); */
   min-height: 50vh;
   max-width: 100%;
   background-repeat: no-repeat;
@@ -61,7 +61,6 @@ h2 {
   text-align: center;
 }
 .content {
-  position: fixed;
   left: 0;
   right: 0;
   z-index: 9999;
