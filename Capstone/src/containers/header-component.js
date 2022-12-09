@@ -32,12 +32,14 @@ const Header = () => {
       </div>
       {isLoggedIn ? null : (
         <div className="jumbotron">
-          <h1 className="display-4">Plan your National Parks Trip</h1>
-          <p className="lead">
-            We've compiled details about campgrounds, activities, and more so
-            that you don't have to. Sync to your Google Calendar for easy access
-            to your itinerary.
-          </p>
+          <div className="content">
+            <h1 className="display-4">Plan your National Parks Trip</h1>
+            <p className="lead">
+              We've compiled details about campgrounds, activities, and more so
+              that you don't have to. Sync to your Google Calendar for easy
+              access to your itinerary.
+            </p>
+          </div>
           <hr className="my-4" />
           <p className="lead">
             <button
@@ -54,4 +56,5 @@ const Header = () => {
     </div>
   );
 };
+
 export default Header;
