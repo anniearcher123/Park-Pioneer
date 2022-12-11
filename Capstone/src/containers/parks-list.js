@@ -13,7 +13,7 @@ const ParksList = () => {
     //   }, []);
 
     useEffect(() => {
-            fetch('https://developer.nps.gov/api/v1/parks?&api_key=8vJFyAsrGu6yLrJbygM2i5KDd5SNmyQNri1phITm')
+            fetch('https://developer.nps.gov/api/v1/parks?&api_key=cHVc4fkkvOJ7JGO1h6SPHajDtt9NSmef3cH9oBwH')
             .then((results) => results.json())
             .then((data) => setParksList(data.data));
         

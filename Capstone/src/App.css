@@ -58,3 +58,24 @@ h2 {
   background-size: 100%;
   text-align: center;
 }
+
+.jumbotronLoggedIn {
+  display: grid;
+  background-image: url("./images/north-cascades-national-park-picture-lake-mount-shuksan_4x3.webp");
+  min-height: 30vh;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  align-items: center;
+  background-position: center center;
+  background-size: 100%;
+  text-align: center;
+}
+
+.liveFeedSlider{
+  height: fit-content;
+}
+
+.liveCards{
+  height: 25vh;
+  overflow: scroll;
+}

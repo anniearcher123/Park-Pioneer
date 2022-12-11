@@ -8,7 +8,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AppContext } from "../context/context";
-import Header from "./header-component";
+
 
 const locales = {
     "en-US": require("date-fns/locale/en-US"),
@@ -144,7 +144,6 @@ function MyCalendar() {
 
     return (
         <div>
-            <Header/>
             <div className="text-center">
                 <h1>My Calendar</h1>
                 <h2>Add Event</h2>

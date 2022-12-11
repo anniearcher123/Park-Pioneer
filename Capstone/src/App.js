@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
+
 import Home from './containers/home-page'
 import Login from './containers/login';
-import MyCalendar from './containers/calendar';
+import CalendarPage from './containers/calendar-page';
+import LiveFeed from './containers/live-feed';
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppContext} from "./context/context";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -35,8 +38,9 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/calendar" element={<MyCalendar/>} />
+            <Route path="/calendar" element={<CalendarPage/>} />
             <Route path="/login" element={<Login/>}/>
+            <Route path='/discover' element={<LiveFeed/>}/>
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>

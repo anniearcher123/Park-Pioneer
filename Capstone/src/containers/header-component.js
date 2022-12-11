@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     const {isLoggedIn, SetIsLoggedIn} = useContext(AppContext);
-    function login(){
-        SetIsLoggedIn(true)
+    function logout(){
+        SetIsLoggedIn(false)
     }
 
     return(
@@ -22,15 +22,21 @@ const Header = () => {
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/discover">Live Feeds</NavLink>
                     </li>
+                    {isLoggedIn ? <li className="nav-item">
+                        <NavLink className="nav-link link" onClick={logout}>Log Out</NavLink>
+                    </li>: null}
                 </ul>
             </div>
-            {isLoggedIn ? null :
+            {isLoggedIn ? <div className="jumbotronLoggedIn">
+                    <h1 className="display-4">Plan your National Parks Trip</h1>
+                    <p className="lead">We've compiled details about campgrounds, activities, and more so that you don't have to. Sync to your Google Calendar for easy access to your itinerary.</p>
+                </div> :
                 <div className="jumbotron">
                     <h1 className="display-4">Plan your National Parks Trip</h1>
                     <p className="lead">We've compiled details about campgrounds, activities, and more so that you don't have to. Sync to your Google Calendar for easy access to your itinerary.</p>
                     <hr className="my-4"/>
                     <p className="lead">
-                        <button className="btn btn-primary btn-lg" href="#" role="button" onClick={login}>Sign in now!</button>
+                        <NavLink className="btn btn-primary btn-lg" href="#" role="button" to="/login">Sign in now!</NavLink>
                     </p>
                 </div>}
         </div>
