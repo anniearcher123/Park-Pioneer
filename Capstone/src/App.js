@@ -3,12 +3,14 @@ import './App.css';
 import Home from './containers/home-page'
 import Login from './containers/login';
 import MyCalendar from './containers/calendar';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import { AppContext} from "./context/context";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ParkPage from './containers/park-page';
 
 
 function App() {
+  const {parkName} = useParams();
   const [Events, SetEvents] = useState([
       {
           title: "Test",
@@ -37,6 +39,7 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/calendar" element={<MyCalendar/>} />
             <Route path="/login" element={<Login/>}/>
+            <Route path="parks/:parkName" element={<ParkPage />}/>
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>
