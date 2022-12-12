@@ -154,6 +154,7 @@ function MyCalendar() {
                         <DatePicker 
                             popperPlacement="position-absolute" 
                             placeholderText="Start Date"  
+                            popperClassName="m-5 position-fixed datePopper"
                             selected={newEvent.start} 
                             onChange={(start) => setNewEvent({ ...newEvent, start })} 
                             showTimeSelect
@@ -166,7 +167,7 @@ function MyCalendar() {
                         <DatePicker 
                             popperPlacement="position-absolute" 
                             className="mb-3" 
-                            popperClassName="" 
+                            popperClassName="m-5 position-sticky datePopper" 
                             placeholderText="End Date" 
                             selected={newEvent.end} 
                             onChange={(end) => setNewEvent({ ...newEvent, end })} 
