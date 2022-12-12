@@ -6,12 +6,14 @@ import Login from './containers/login';
 import CalendarPage from './containers/calendar-page';
 import LiveFeed from './containers/live-feed';
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import { AppContext} from "./context/context";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ParkPage from './containers/park-page';
 
 
 function App() {
+  const {parkName} = useParams();
   const [Events, SetEvents] = useState([
       {
           title: "Test",
@@ -41,6 +43,7 @@ function App() {
             <Route path="/calendar" element={<CalendarPage/>} />
             <Route path="/login" element={<Login/>}/>
             <Route path='/discover' element={<LiveFeed/>}/>
+            <Route path="parks/:parkName" element={<ParkPage />}/>
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>
