@@ -82,3 +82,8 @@ h6 {
   align-items: center;
 
 }
+
+.info-section {
+  display: grid;
+  
+}
