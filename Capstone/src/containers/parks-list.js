@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AppContext} from "../context/context";
 
 
 
 const ParksList = () => {
-    const [nationalParkList, setNationalParkList] = useState([]);
+    const [nationalParkList, setNationalParkList, allEvents, setAllEvents] = useContext(AppContext);
     //useEffect(() => {
     //     (async () => {
     //       const results = await fetch('https://developer.nps.gov/api/v1/parks?&api_key=8vJFyAsrGu6yLrJbygM2i5KDd5SNmyQNri1phITm')
