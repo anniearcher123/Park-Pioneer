@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { AppContext } from '../context/context';
 
 
 const ParksList = () => {
-    const [nationalParkList, setNationalParkList] = useState([]);
     //useEffect(() => {
     //     (async () => {
     //       const results = await fetch('https://developer.nps.gov/api/v1/parks?&api_key=8vJFyAsrGu6yLrJbygM2i5KDd5SNmyQNri1phITm')
@@ -14,6 +13,8 @@ const ParksList = () => {
     //     })();
     //   }, []);
 
+    const [nationalParkList, setNationalParkList] = useState(AppContext);
+    
     useEffect(() => {
             fetch('https://developer.nps.gov/api/v1/parks?parkCode=&limit=449&sort=&api_key=8vJFyAsrGu6yLrJbygM2i5KDd5SNmyQNri1phITm')
             .then((results) => results.json())
