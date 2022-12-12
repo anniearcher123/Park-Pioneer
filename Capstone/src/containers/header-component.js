@@ -28,11 +28,12 @@ const Header = () => {
               Live Feeds
             </NavLink>
           </li>
+          {isLoggedIn ? 
           <li className="nav-item">
             <NavLink className="nav-link" onClick={logout} >
               Logout
             </NavLink>
-          </li>
+          </li> : null}
         </ul>
       </div>
       {isLoggedIn ? 
