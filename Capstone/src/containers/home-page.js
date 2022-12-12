@@ -2,6 +2,8 @@ import React from "react";
 import Header from "./header-component";
 import ParksList from "./parks-list";
 
+
+
 const Home = () => {
   //   const [query, setQuery] = useState("");
   //   const [images, setImages] = useState([]); // declare state variable "images" to an empty array and "setImages" method to update images state
