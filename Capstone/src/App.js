@@ -3,10 +3,12 @@ import "./App.css";
 import Home from "./containers/home-page";
 import Login from "./containers/login";
 import MyCalendar from "./containers/calendar";
+import LiveFeed from "./containers/live-feed";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import { AppContext } from "./context/context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ParkPage from "./containers/park-page";
+import CalendarPage from "./containers/calendar-page";
 
 function App() {
   const { parkName } = useParams();
@@ -30,6 +32,7 @@ function App() {
   const [isLoggedIn, SetIsLoggedIn] = useState(false);
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
   const [allEvents, setAllEvents] = useState(Events);
+  const [nationalParkList, setNationalParkList] = useState([]);
 
   return (
     <AppContext.Provider
@@ -47,9 +50,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/calendar" element={<MyCalendar />} />
+          <Route path="/calendar" element={<CalendarPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="parks/:parkName" element={<ParkPage />} />
+          <Route path="/discover" element={<LiveFeed />} />
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>
