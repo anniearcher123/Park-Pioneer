@@ -19,7 +19,6 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <Footer />
       {/* <SocialFollow /> */}
       <Footer />
       {/* <h1>Image Slider</h1> */}
