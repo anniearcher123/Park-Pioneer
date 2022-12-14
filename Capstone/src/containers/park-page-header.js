@@ -1,7 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
+import { NavLink } from "react-router-dom";
+import { AppContext } from "../context/context";
 
 
 const ParkHeader = () => {
+    const { isLoggedIn, SetIsLoggedIn } = useContext(AppContext);
+    
+    function logout() {
+        SetIsLoggedIn(false);
+    }
 
         return(
             <div>
@@ -9,14 +16,20 @@ const ParkHeader = () => {
                     <h2>Park Planner</h2>
                     <ul className="nav justify-content-center">
                         <li className="nav-item">
-                            <a className="nav-link" to="/">Home</a>
+                            <NavLink className="nav-link" to="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">My Calendar</a>
+                            <NavLink className="nav-link" href="#">My Calendar</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" to="/discover">Live Feeds</a>
+                            <NavLink className="nav-link" to="/discover">Live Feeds</NavLink>
                         </li>
+                        {isLoggedIn ? 
+                        <li className="nav-item">
+                            <NavLink className="nav-link" onClick={logout} >
+                            Logout
+                            </NavLink>
+                        </li> : null}
                     </ul>
                 </div>
                 <div className="jumbotron">
