@@ -1,8 +1,15 @@
-import React from "react";
-import Header from "./header-component";
+import React, {useContext} from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/context";
 
-const Login = () => {
-  <Header />;
+export default function Login (props) {
+  const {isLoggedIn, SetIsLoggedIn} = useContext(AppContext);
+  const navigate = useNavigate()
+  
+  function login(){
+    SetIsLoggedIn(true)
+    navigate("/")
+}
   // sign up form
   //   let [authMode, setAuthMode] = useState("signin");
 
@@ -54,7 +61,7 @@ const Login = () => {
   // login form
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form">
+      <form className="Auth-form" onSubmit={login}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign In</h3>
           <div className="form-group mt-3">
@@ -87,4 +94,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+
