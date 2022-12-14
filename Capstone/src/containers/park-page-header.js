@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AppContext } from "../context/context";
 
 
 const ParkHeader = () => {
 
-    const [selectedPark] = useState(AppContext)
-    console.log("Test:", selectedPark)
+    const {selectedPark} = useContext(AppContext)
+    console.log(selectedPark)
 
 
         return(
@@ -25,9 +25,9 @@ const ParkHeader = () => {
                     </ul>
                 </div>
                 <div className="jumbotron">
-                    <h1 className="display-4">{selectedPark.fullName}</h1>
-                    <p className="lead">Acadia National Park Description</p>
-                    <p className="lead">Find information about activities, campsites, and more below.</p>
+                    <h1 className="display-4">{selectedPark?.fullName}</h1>
+                    <p className="lead" id="park-info">{selectedPark?.description}</p>
+                    <p className="lead" id="more-info">Find information about activities, campsites, and more below.</p>
                 </div>
                 
             </div>

@@ -5,8 +5,8 @@ import { AppContext} from "../context/context";
 
 
 const ParksList = () => {
-    const [nationalParkList, setNationalParkList] = useState(AppContext);
-    const [selectedPark, setSelectedPark] = useState(AppContext)
+    const {nationalParkList, setNationalParkList} = useContext(AppContext);
+    const {selectedPark, setSelectedPark} = useContext(AppContext)
 
 
     useEffect(() => {
@@ -34,7 +34,7 @@ function filterPark(thiscode) {
         }
 
     })
-    setSelectedPark(singlePark);
+    setSelectedPark(singlePark[0]);
     console.log("Selected Park:", singlePark);
 }
 
