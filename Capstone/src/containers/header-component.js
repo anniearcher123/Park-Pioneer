@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const { isLoggedIn, SetIsLoggedIn } = useContext(AppContext);
-  function login() {
-    SetIsLoggedIn(true);
+  function logout() {
+    SetIsLoggedIn(false);
   }
 
   return (
@@ -28,9 +28,25 @@ const Header = () => {
               Live Feeds
             </NavLink>
           </li>
+          {isLoggedIn ? 
+          <li className="nav-item">
+            <NavLink className="nav-link" onClick={logout} >
+              Logout
+            </NavLink>
+          </li> : null}
         </ul>
       </div>
-      {isLoggedIn ? null : (
+      {isLoggedIn ? 
+        <div className="jumbotronLoggedIn">
+            <div className="content">
+                <h1 className="display-4">Plan your National Parks Trip</h1>
+                <p className="lead">
+                We've compiled details about campgrounds, activities, and more so
+                that you don't have to. Sync to your Google Calendar for easy
+                access to your itinerary.
+                </p>
+            </div> 
+        </div>: 
         <div className="jumbotron">
           <div className="content">
             <h1 className="display-4">Plan your National Parks Trip</h1>
@@ -42,17 +58,17 @@ const Header = () => {
           </div>
           <hr className="my-4" />
           <p className="lead">
-            <button
+            <NavLink
               className="btn btn-primary btn-lg"
               href="#"
               role="button"
-              onClick={login}
+              to="/login"
             >
               Sign in now!
-            </button>
+            </NavLink>
           </p>
         </div>
-      )}
+      }
     </div>
   );
 };

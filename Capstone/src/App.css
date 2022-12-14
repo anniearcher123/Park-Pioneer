@@ -47,7 +47,7 @@ h2 {
   text-align: center;
 }
 
- .jumbotron {
+.jumbotron {
   display: grid;
   background-image: url("./images/north-cascades-national-park-picture-lake-mount-shuksan_4x3.webp");
   /* -webkit-filter: blur(2px);
@@ -59,8 +59,38 @@ h2 {
   background-position: center center;
   background-size: 100%;
   text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: bolder;
 }
+
+
+
+.jumbotron::before {
+  background: inherit;
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+
+
+.jumbotronLoggedIn {
+  display: grid;
+  background-image: url("./images/north-cascades-national-park-picture-lake-mount-shuksan_4x3.webp");
+  min-height: 30vh;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  align-items: center;
+  background-position: center center;
+  background-size: 100%;
+  text-align: center;
+}
+
+.liveCards{
+  height: 25vh;
+  overflow: scroll;
+}
+
 .content {
+  position: sticky;
   left: 0;
   right: 0;
   z-index: 9999;
@@ -68,9 +98,25 @@ h2 {
   margin-right: 20px;
 }
 
+.datePopper {
+  right: 0;
+  left: 0;
+}
+
+h6 {
+  display: grid;
+  align-items: center;
+
+}
+
+.info-section {
+  display: grid;
+  
+
+}
 footer {
   position: fixed;
-  background-color: rgb(7, 70, 16);
+  background-color:rgba(18, 13, 13, 0.573);
   text-align: center;
   margin-top: auto;
   padding: 8px;
