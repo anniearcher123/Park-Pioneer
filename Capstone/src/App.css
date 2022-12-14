@@ -41,6 +41,12 @@ label {
 .home-header {
   color: white;
   background-color: black;
+  font-family: 'Playfair Display', serif;
+  font-weight: bolder;
+}
+
+.nav-item {
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
 h2 {
@@ -61,13 +67,12 @@ h2 {
   font-weight: bolder;
 }
 
-
-
 .jumbotron::before {
   background: inherit;
   -webkit-filter: blur(2px);
   filter: blur(2px);
 }
+
 .content {
   position: sticky;
   left: 0;

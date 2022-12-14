@@ -3,10 +3,12 @@ import ParkHeader from './park-page-header';
 import Amenities from './amenities-component';
 import Activities from './activities-component';
 import Campground from './campground-component';
+import { AppContext } from '../context/context';
 
 
 const ParkPage = () => {
 
+    const [selectedPark] = useState(AppContext)
 
 
     return(

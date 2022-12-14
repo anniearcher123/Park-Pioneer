@@ -10,7 +10,7 @@ import ParkPage from './containers/park-page';
 
 
 function App() {
-  const {parkName} = useParams();
+  
   const [Events, SetEvents] = useState([
       {
           title: "Test",
@@ -32,10 +32,11 @@ function App() {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
   const [allEvents, setAllEvents] = useState(Events);
   const [nationalParkList, setNationalParkList] = useState([]);
+  const [selectedPark, setSelectedPark] = useState([]);
 
 
   return (
-    <AppContext.Provider value={{Events, SetEvents, isLoggedIn, SetIsLoggedIn, newEvent, setNewEvent, allEvents, setAllEvents, nationalParkList, setNationalParkList}}>
+    <AppContext.Provider value={{Events, SetEvents, isLoggedIn, SetIsLoggedIn, newEvent, setNewEvent, allEvents, setAllEvents, nationalParkList, setNationalParkList, selectedPark, setSelectedPark}}>
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Home/>}/>

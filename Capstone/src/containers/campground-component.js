@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Campground = () => {
 
 //need to make api call to campground endpoint
+
+// useEffect(() => {
+//     fetch('https://developer.nps.gov/api/v1/campgrounds&api_key=8vJFyAsrGu6yLrJbygM2i5KDd5SNmyQNri1phITm')
+//     .then((results) => results.json())
+//     .then((data) => {
+//         console.log("Campgrounds:", data);
+//     });
+
+// }, []);
 
     return(
         <div>

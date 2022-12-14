@@ -1,22 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AppContext} from "../context/context";
 
 
 
 const ParksList = () => {
-    const [nationalParkList, setNationalParkList, allEvents, setAllEvents] = useContext(AppContext);
-    //useEffect(() => {
-    //     (async () => {
-    //       const results = await fetch('https://developer.nps.gov/api/v1/parks?&api_key=8vJFyAsrGu6yLrJbygM2i5KDd5SNmyQNri1phITm')
-    //       const data = await results.json();
-    //       parksList.push(data.data)
-    //       console.log(parksList);
-    //     })();
-    //   }, []);
+    const [nationalParkList, setNationalParkList] = useState(AppContext);
+    const [selectedPark, setSelectedPark] = useState(AppContext)
+
 
     useEffect(() => {
-            fetch('https://developer.nps.gov/api/v1/parks?parkCode=&limit=449&sort=&api_key=8vJFyAsrGu6yLrJbygM2i5KDd5SNmyQNri1phITm')
+            fetch('https://developer.nps.gov/api/v1/parks?parkCode=&limit=449&sort=&api_key=cHVc4fkkvOJ7JGO1h6SPHajDtt9NSmef3cH9oBwH')
             .then((results) => results.json())
             .then((data) => {
                 console.log(data)
@@ -27,14 +21,22 @@ const ParksList = () => {
                             return park
                         }
                     })
-
                     setNationalParkList(parkList);
                 }
             });
         
     }, []);
 
+function filterPark(thiscode) {
+    let singlePark = nationalParkList.filter((park) => {
+        if(park.parkCode === thiscode) {
+            return park
+        }
 
+    })
+    setSelectedPark(singlePark);
+    console.log("Selected Park:", singlePark);
+}
 
 
     if(nationalParkList.length > 0)
@@ -43,7 +45,7 @@ const ParksList = () => {
                 {nationalParkList.map((park) => {
                     return(
                         <div className="parks-list">
-                            <h6><Link to={`parks/${park.fullName}`}>{park.fullName}</Link></h6>
+                            <h6><NavLink to={`parks/${park.fullName}`} onClick={() => filterPark(park.parkCode)}>{park.fullName}</NavLink></h6>
                         </div>
                     )
                 })}
