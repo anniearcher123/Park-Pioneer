@@ -8,7 +8,7 @@ import { AppContext } from '../context/context';
 
 const ParkPage = () => {
 
-    const [selectedPark] = useState(AppContext)
+    const {selectedPark} = useContext(AppContext)
 
 
     return(

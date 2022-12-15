@@ -33,10 +33,11 @@ function App() {
   const [allEvents, setAllEvents] = useState(Events);
   const [nationalParkList, setNationalParkList] = useState([]);
   const [selectedPark, setSelectedPark] = useState([]);
+  const [activitiesList, setActivitiesList] = useState();
 
 
   return (
-    <AppContext.Provider value={{Events, SetEvents, isLoggedIn, SetIsLoggedIn, newEvent, setNewEvent, allEvents, setAllEvents, nationalParkList, setNationalParkList, selectedPark, setSelectedPark}}>
+    <AppContext.Provider value={{Events, SetEvents, isLoggedIn, SetIsLoggedIn, newEvent, setNewEvent, allEvents, setAllEvents, nationalParkList, setNationalParkList, selectedPark, setSelectedPark, activitiesList, setActivitiesList}}>
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Home/>}/>
