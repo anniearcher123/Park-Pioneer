@@ -39,7 +39,7 @@ function App() {
 
 
   return (
-    <AppContext.Provider value={{Events, SetEvents, isLoggedIn, SetIsLoggedIn, newEvent, setNewEvent, allEvents, setAllEvents, nationalParkList, setNationalParkList, selectedPark, setSelectedPark, activitiesList, setActivitiesList}}>
+    <AppContext.Provider value={{Events, SetEvents, isLoggedIn, SetIsLoggedIn, newEvent, setNewEvent, allEvents, setAllEvents, nationalParkList, setNationalParkList, selectedPark, setSelectedPark}}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

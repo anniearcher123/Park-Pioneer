@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
 import { AppContext } from "../context/context";
+import Carousel from 'react-bootstrap/Carousel';
 
 
 const ParkHeader = () => {
@@ -37,12 +38,38 @@ const ParkHeader = () => {
                     </ul>
                 </div>
                 <div className="jumbotron">
-                    <h1 className="display-4">{selectedPark?.fullName}</h1>
-                    <p className="lead" id="park-info">{selectedPark?.description}</p>
-                    <p className="lead" id="more-info">Find information about activities, campsites, and more below.</p>
-                </div>
-                
-            </div>
+                <Carousel>
+                    <Carousel.Item>
+                        <img id="park-image" className="d-block w-100" src={selectedPark.images[0].url} alt="First slide" />
+                        <Carousel.Caption>
+                        <h1>{selectedPark?.fullName}</h1>
+                        <p>{selectedPark?.description}</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img id="park-image" className="d-block w-100" src={selectedPark.images[1].url} alt="Second slide" />
+                        <Carousel.Caption>
+                        <h1>{selectedPark?.fullName}</h1>
+                        <p>{selectedPark?.description}</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img id="park-image" className="d-block w-100" src={selectedPark.images[2].url} alt="Third slide" />
+                        <Carousel.Caption>
+                        <h1>{selectedPark?.fullName}</h1>
+                        <p>{selectedPark?.description}</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img id="park-image" className="d-block w-100" src={selectedPark.images[3].url} alt="Third slide" />
+                        <Carousel.Caption>
+                        <h1>{selectedPark?.fullName}</h1>
+                        <p>{selectedPark?.description}</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    </Carousel>
+                </div>                
+            </div>  
         )
         
     }

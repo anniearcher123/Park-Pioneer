@@ -21,7 +21,8 @@ const ParksList = () => {
                             return park
                         }
                     })
-                    setNationalParkList(parkList);
+                    let sortedParkList = parkList.sort();
+                    setNationalParkList(sortedParkList);
                 }
             });
         
