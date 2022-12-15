@@ -105,6 +105,12 @@ h2 {
   text-align: center;
 }
 
+.parks-list {
+  display: grid;
+  text-align: center;
+  align-items: center;
+}
+
 .liveCards{
   height: 25vh;
   overflow: scroll;
