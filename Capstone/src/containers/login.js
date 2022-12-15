@@ -1,6 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/context";
 
-export default function (props) {
+export default function Login (props) {
+  const {isLoggedIn, SetIsLoggedIn} = useContext(AppContext);
+  const navigate = useNavigate()
+  
+  function login(){
+    SetIsLoggedIn(true)
+    navigate("/")
+}
   // sign up form
   //   let [authMode, setAuthMode] = useState("signin");
 
@@ -25,7 +34,7 @@ export default function (props) {
   //               <input
   //                 type="email"
   //                 className="form-control mt-1"
-  //                 placeholder="Enter email"
+  //                 placeholder="Email"
   //               />
   //             </div>
   //             <div className="form-group mt-3">
@@ -33,7 +42,7 @@ export default function (props) {
   //               <input
   //                 type="password"
   //                 className="form-control mt-1"
-  //                 placeholder="Enter password"
+  //                 placeholder="Password"
   //               />
   //             </div>
   //             <div className="d-grid gap-2 mt-3">
@@ -52,11 +61,11 @@ export default function (props) {
   // login form
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form">
+      <form className="Auth-form" onSubmit={login}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign In</h3>
           <div className="form-group mt-3">
-            <label>Email address</label>
+            <label>Email Address</label>
             <input
               type="email"
               className="form-control mt-1"
@@ -83,4 +92,6 @@ export default function (props) {
       </form>
     </div>
   );
-}
+};
+
+

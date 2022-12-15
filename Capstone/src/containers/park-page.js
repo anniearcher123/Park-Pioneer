@@ -28,7 +28,7 @@ const ParkPage = () => {
                 </div>
             </div>
         </div>
-    )
-}
+);
+};
 
 export default ParkPage;
