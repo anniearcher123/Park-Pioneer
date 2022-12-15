@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Footer from "./Footer-component";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -8,8 +9,8 @@ const Footer = () => {
     <footer>
       <div>
         <div className="footer-header">
-          <h2>312-456-7890</h2>
-          <h2>parkshelp@parks.gov</h2>
+          <h5>parkshelp@parks.gov</h5>
+          <h5>312-456-7890</h5>
           <ul className="nav justify-content-center">
             <li className="nav-item">
               <NavLink className="nav-link" to="/">

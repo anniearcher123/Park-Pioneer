@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Header from "./header-component";
+import Footer from "./footer-component";
 import ParksList from "./parks-list";
-
-
+// import SocialFollow from "./socialfollow";
 
 const Home = () => {
   //   const [query, setQuery] = useState("");
@@ -19,6 +19,8 @@ const Home = () => {
   return (
     <div>
       <Header />
+      {/* <SocialFollow /> */}
+      <Footer />
       {/* <h1>Image Slider</h1> */}
 
       {/* <form onSubmit={handleSubmit}>
