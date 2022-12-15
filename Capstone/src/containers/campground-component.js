@@ -33,9 +33,9 @@ useEffect(() => {
     </h2>
     <div id="collapseOne" className="accordion-collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div className="accordion-body">
-        <ul>
-            <li>
-                <img src={campground.images.url}></img>
+        <ul className="camp-list">
+            <li className="camp-items">
+                <img className="camp-image" src={campground.images[0].url}></img>
                 <h3>Amenities:</h3>
                 <p>{campground.amenities.campStore}</p>
                 <p>{campground.amenities.dumpStation}</p>
