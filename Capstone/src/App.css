@@ -148,7 +148,7 @@ h6 {
 }
 footer {
   position: fixed;
-  background-color: rgb(7, 70, 16);
+  background-color:rgba(18, 13, 13, 0.573);
   text-align: center;
   margin-top: auto;
   padding: 8px;
@@ -160,6 +160,34 @@ footer {
 }
 .button {
   background-color: blue;
+}
+
+.social-container {
+  background: #eee;
+  padding: 25px 50px;
+}
+a.social {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+a.social:hover {
+  transform: translateY(-2px);
+}
+a.youtube {
+  color: #eb3223;
+}
+
+a.facebook {
+  color: #4968ad;
+}
+
+a.twitter {
+  color: #49a1eb;
+}
+
+a.instagram {
+  color: black;
 }
 
 .camp-image {
