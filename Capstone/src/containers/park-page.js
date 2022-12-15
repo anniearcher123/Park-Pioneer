@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import ParkHeader from './park-page-header';
 import Amenities from './amenities-component';
 import Activities from './activities-component';
