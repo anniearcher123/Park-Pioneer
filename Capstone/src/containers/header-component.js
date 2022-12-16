@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div>
       <div className="home-header">
-        <h2>Park Planner</h2>
+        <h2>Park Pioneer</h2>
         <ul className="nav justify-content-center">
           <li className="nav-item">
             <NavLink className="nav-link" to="/">

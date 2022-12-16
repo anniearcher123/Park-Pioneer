@@ -206,3 +206,8 @@ a.instagram {
   display: grid;
   align-items: center;
 }
+
+.activity-image {
+  max-width: 150px;
+  max-height: 150px;
+}
