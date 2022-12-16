@@ -50,13 +50,24 @@ label {
   font-weight: bolder;
 }
 
+.navbar-nav {
+  margin-left: 15px;
+  
+}
+
+.logo {
+  margin-left: 5px;
+}
+
+.navbar-brand {
+  margin-left: 10px;
+}
+
 .nav-item {
   font-family: 'PT Sans Narrow', sans-serif;
 }
 
-h2 {
-  text-align: center;
-}
+
 
 .jumbotron {
   display: grid;
