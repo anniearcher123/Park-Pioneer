@@ -21,9 +21,9 @@ const Amenities = () => {
     }, []);
 
     return(
-        <div className="amenities">
-            <h3>Park Amenities</h3>
-            <ListGroup>
+        <div className="info-section">
+            <h3 className="info-title">Park Amenities</h3>
+            <ListGroup className="list-group-section">
                 {amenitiesList.map((amenity) => {
                     return(
                         <ListGroup.Item>{amenity.name}</ListGroup.Item>

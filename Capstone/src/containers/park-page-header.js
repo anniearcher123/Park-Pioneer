@@ -38,7 +38,7 @@ const ParkHeader = () => {
                     </ul>
                 </div>
                 <div className="jumbotron">
-                <Carousel>
+                <Carousel variant="dark">
                     <Carousel.Item>
                         <img id="park-image" className="d-block w-100" src={selectedPark.images[0].url} alt="First slide" />
                         <Carousel.Caption>

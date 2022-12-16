@@ -2,6 +2,11 @@
   background-color: white;
 }
 
+p {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: large;
+}
+
 .Auth-form-container {
   display: flex;
   justify-content: center;
@@ -161,8 +166,18 @@ h6 {
 
 .info-section {
   display: grid;
-
+  margin-top: 100px;
 }
+
+.info-title {
+  background-color: black;
+  color: #eee;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+
 footer {
   position: fixed;
   background-color:rgba(18, 13, 13, 0.573);
@@ -210,18 +225,6 @@ a.instagram {
 .camp-image {
   max-width: 150px;
   max-height: 150px;
-}
-
-.camp-items {
-  list-style: none;
-  display: grid;
-  align-items: center;
-}
-
-.camp-list {
-  list-style: none;
-  display: grid;
-  align-items: center;
 }
 
 .activity-image {

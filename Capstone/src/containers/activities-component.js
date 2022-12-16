@@ -23,9 +23,9 @@ useEffect(() => {
 }, []);
 
         return(
-            <div>
-                <h3>Activities</h3>
-                <Accordion>
+            <div className="info-section">
+                <h3 className="info-title">Activities</h3>
+                <Accordion className="accordion-section">
                     {activityList.map((activity, index) => {
                         return(
 

@@ -21,8 +21,8 @@ useEffect(() => {
 }, []);
 
     return(
-        <div>
-            <h3>Campground Info</h3>
+        <div className="info-section">
+            <h3 className="info-title">Campgrounds</h3>
             <Accordion>
                     {campgroundsList.map((campground, index) => {
                         return(
