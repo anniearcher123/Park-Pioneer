@@ -110,7 +110,7 @@ label {
 .jumbotron {
   display: grid;
   position: relative;
-  min-height: 40vh;
+  min-height: 60vh;
   max-width: 100%;
   text-align: center;
   font-family: 'Playfair Display', serif;
@@ -125,9 +125,9 @@ label {
 
 .jumbotron::before {
   content: "";
-  background: url("./images/north-cascades-national-park-picture-lake-mount-shuksan_4x3.webp");
+  background: url("./images/Mount-Rainier-National-Park-GettyImages-1015099244.webp");
   background-repeat: no-repeat;
-  background-position: center center;
+
   align-items: center;
   background-size: 100%;
   opacity: 0.7;
@@ -167,7 +167,7 @@ label {
 
 .jumbotronLoggedIn::before {
   content: "";
-  background: url("./images/north-cascades-national-park-picture-lake-mount-shuksan_4x3.webp");
+  background: url("./images//Mount-Rainier-National-Park-GettyImages-1015099244.webp");
   background-repeat: no-repeat;
   background-position: center center;
   align-items: center;
@@ -180,6 +180,8 @@ label {
   position: absolute;
   z-index: -1;
 }
+
+
 
 .parks-list {
   display: grid;
@@ -201,6 +203,7 @@ label {
   z-index: 9999;
   margin-left: 20px;
   margin-right: 20px;
+  margin-top: 30px;
 }
 
 .datePopper {
@@ -232,11 +235,10 @@ footer {
   color: white;
   text-align: center;
   margin-top: auto;
-  padding: 8px;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 8px;
+  padding: 5px;
   text-align: center;
 }
 .button {
@@ -333,4 +335,13 @@ a.instagram {
 
 .weather-icon {
   max-height: 40px;
+}
+
+#footer-heading {
+  font-family: 'Playfair Display', serif;
+}
+
+
+.card-header {
+  color: white;
 }
