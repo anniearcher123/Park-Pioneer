@@ -45,7 +45,7 @@ const Header = () => {
         {isLoggedIn ? 
         <div className="jumbotronLoggedIn">
             <div className="content">
-                <h1 className="display-4">Plan your National Parks Trip</h1>
+                <h1 id="jumbotron-title" className="display-4">Plan your National Parks Trip</h1>
                 <p className="lead">
                 We've compiled details about campgrounds, activities, and more so
                 that you don't have to. Sync to your Google Calendar for easy
@@ -65,7 +65,7 @@ const Header = () => {
             <hr className="my-4" />
             <p className="lead">
             <NavLink
-                className="btn btn-primary btn-lg"
+                className="btn btn-success btn-lg"
                 href="#"
                 role="button"
                 to="/login"

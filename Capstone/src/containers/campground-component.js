@@ -30,6 +30,7 @@ useEffect(() => {
                     <Accordion.Item eventKey={index}>
                         <Accordion.Header>{campground.name}</Accordion.Header>
                         <Accordion.Body>
+                            <div className="campground-body">
                             <img className="activity-image" src={campground.images[0].url} ></img>
                             <h3>Amenities:</h3>
                                 <p>Campstore: {campground.amenities.campStore}</p>
@@ -42,8 +43,8 @@ useEffect(() => {
                                 <p>Rv-Only Sites: {campground.campsites.rvOnly}</p>
                                 <p>Tent-Only Sites: {campground.campsites.tentOnly}</p>
                                 <p>Total Sites: {campground.campsites.totalSites}</p>
-                                <a href={campground.url}>More Info</a>
-
+                                <a className="accordion-link" href={campground.url}>More Info</a>
+                            </div>
                         </Accordion.Body>
                     </Accordion.Item>
                         )

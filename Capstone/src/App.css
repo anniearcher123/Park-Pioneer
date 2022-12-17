@@ -7,6 +7,39 @@ p {
   font-size: large;
 }
 
+h1 {
+  font-family: 'Playfair Display', serif;
+}
+
+.accordion-link {
+  color:rgb(34, 34, 34);
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: larger;
+}
+
+.accordion-link:hover {
+  color: green;
+}
+
+p {
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.accordion-body {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: medium;
+  font-weight: 500;
+}
+
+
+.park-list-header {
+  display: grid;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .Auth-form-container {
   display: flex;
   justify-content: center;
@@ -72,7 +105,7 @@ label {
 .jumbotron {
   display: grid;
   position: relative;
-  min-height: 20vh;
+  min-height: 40vh;
   max-width: 100%;
   text-align: center;
   font-family: 'Playfair Display', serif;
@@ -147,6 +180,7 @@ label {
   display: grid;
   text-align: center;
   align-items: center;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .liveCards{
@@ -239,6 +273,14 @@ a.instagram {
 }
 
 .activity-image {
+  display: grid;
   max-width: 150px;
   max-height: 150px;
+  align-content: center;
+  margin-bottom: 10px;
+}
+
+.campground-body {
+  display: grid;
+  align-items: center;
 }

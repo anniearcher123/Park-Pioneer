@@ -29,14 +29,14 @@ useEffect(() => {
                     {activityList.map((activity, index) => {
                         return(
 
-                    <Accordion.Item eventKey={index}>
+                    <Accordion.Item eventKey={index} className="col-12">
                         <Accordion.Header>{activity.title}</Accordion.Header>
-                        <Accordion.Body>
-                            <img className="activity-image" src={activity.images[0].url} ></img>
-                            {activity.shortDescription}
+                        <Accordion.Body className="accordion-body">
+                            <img className="row activity-image" src={activity.images[0].url} ></img>
+                            <div className="row">{activity.shortDescription}</div>
                             <br/>
-                            <a href={activity.url}>More Info</a>
-                            <button>Add to Calendar</button>
+                            <div className="row"><a className="accordion-link " href={activity.url}>More Info</a></div>
+                            <div className="row"><button type="button" id="accordion-button" className="btn btn-dark">Add to Calendar</button></div>
                         </Accordion.Body>
                     </Accordion.Item>
                         )

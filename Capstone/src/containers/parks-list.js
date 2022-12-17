@@ -46,7 +46,7 @@ function filterPark(thiscode) {
                 {nationalParkList.map((park) => {
                     return(
                         <div className="parks-list">
-                            <h6><NavLink to={`parks/${park.fullName}`} onClick={() => filterPark(park.parkCode)}>{park.fullName}</NavLink></h6>
+                            <h6 className='parks'><NavLink className="link-dark" to={`parks/${park.fullName}`} onClick={() => filterPark(park.parkCode)}>{park.fullName}</NavLink></h6>
                         </div>
                     )
                 })}
