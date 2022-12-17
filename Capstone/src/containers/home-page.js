@@ -18,15 +18,14 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <Footer />
       {/* <h1>Image Slider</h1> */}
-
       {/* <form onSubmit={handleSubmit}>
         <input type="text" onChange={(e) => setQuery(e.target.value)} />
         <input type="submit" value="Search" />
       </form> */}
       <h1 className="park-list-header">Explore A National Park: </h1>
       <ParksList />
+      <Footer />
     </div>
   );
 };
