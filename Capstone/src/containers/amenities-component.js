@@ -22,7 +22,7 @@ const Amenities = () => {
 
     return(
         <div className="info-section">
-            <h3 className="info-title">Park Amenities</h3>
+            <h3 className="info-title bg-dark">Park Amenities</h3>
             <ListGroup className="list-group-section">
                 {amenitiesList.map((amenity) => {
                     return(

@@ -5,7 +5,6 @@ import Activities from './activities-component';
 import Campground from './campground-component';
 import { AppContext } from '../context/context';
 
-
 const ParkPage = () => {
 
     const {selectedPark} = useContext(AppContext)

@@ -7,7 +7,6 @@ const Campground = () => {
 const {selectedPark} = useContext(AppContext)
 const [campgroundsList, setCampgroundList] = useState([]);
 let parkCode = selectedPark.parkCode
-//need to make api call to campground endpoint
 
 useEffect(() => {
     fetch(`https://developer.nps.gov/api/v1/campgrounds?parkcode=${parkCode}&api_key=oivfus5fZRuuPB8uAwpkRKCLKZoI9pqStIuaky4v`)
@@ -22,7 +21,7 @@ useEffect(() => {
 
     return(
         <div className="info-section">
-            <h3 className="info-title">Campgrounds</h3>
+            <h3 className="info-title bg-dark">Campgrounds</h3>
             <Accordion>
                     {campgroundsList.map((campground, index) => {
                         return(
@@ -31,7 +30,7 @@ useEffect(() => {
                         <Accordion.Header>{campground.name}</Accordion.Header>
                         <Accordion.Body>
                             <div className="campground-body">
-                            <img className="activity-image" src={campground.images[0].url} ></img>
+                            <img className="activity-image" src={campground.images[0]?.url} ></img>
                             <h3>Amenities:</h3>
                                 <p>Campstore: {campground.amenities.campStore}</p>
                                 <p>Dump Station: {campground.amenities.dumpStation}</p>

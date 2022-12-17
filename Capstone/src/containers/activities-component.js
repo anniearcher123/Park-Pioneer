@@ -24,7 +24,7 @@ useEffect(() => {
 
         return(
             <div className="info-section">
-                <h3 className="info-title">Activities</h3>
+                <h3 className="info-title bg-dark">Activities</h3>
                 <Accordion className="accordion-section">
                     {activityList.map((activity, index) => {
                         return(
@@ -32,7 +32,7 @@ useEffect(() => {
                     <Accordion.Item eventKey={index} className="col-12">
                         <Accordion.Header>{activity.title}</Accordion.Header>
                         <Accordion.Body className="accordion-body">
-                            <img className="row activity-image" src={activity.images[0].url} ></img>
+                            <img className="row activity-image" src={activity.images[0]?.url} ></img>
                             <div className="row">{activity.shortDescription}</div>
                             <br/>
                             <div className="row"><a className="accordion-link " href={activity.url}>More Info</a></div>
