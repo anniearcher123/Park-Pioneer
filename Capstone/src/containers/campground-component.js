@@ -1,5 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { AppContext} from "../context/context";
+import Accordion from 'react-bootstrap/Accordion';
 
 const Campground = () => {
 
@@ -15,47 +16,41 @@ useEffect(() => {
     let campgroundList = data.data;
     console.log("Campgrounds:",data);
     setCampgroundList(campgroundList)
-   
+
 });
 }, []);
 
     return(
-        <div>
-            <h3>Popular Campground Info</h3>
-            <div className="accordion" id="accordionExample">
-    {campgroundsList.map((campground) => {
-        return(
-            <div className="accordion-item">
-    <h2 className="accordion-header" id="headingOne">
-        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            {campground.name}
-        </button>
-    </h2>
-    <div id="collapseOne" className="accordion-collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div className="accordion-body">
-        <ul className="camp-list">
-            <li className="camp-items">
-                <img className="camp-image" src={campground.images[0].url}></img>
-                <h3>Amenities:</h3>
-                <p>{campground.amenities.campStore}</p>
-                <p>{campground.amenities.dumpStation}</p>
-                <p>{campground.amenities.foodStorageLockers}</p>
-                <p>{campground.amenities.potableWater[0]}</p>
-                <p>{campground.amenities.showers[0]}</p>
-                <p>{campground.amenities.toilets[0]}</p>
-                <h3>Campsites:</h3>
-                <p>{campground.campsites.rvOnly}</p>
-                <p>{campground.campsites.tentOnly}</p>
-                <p>{campground.campsites.totalSites}</p>
-            </li>
-            <li><a href={campground.url}>More Info</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-        )
-    })}
-</div>
+        <div className="info-section">
+            <h3 className="info-title">Campgrounds</h3>
+            <Accordion>
+                    {campgroundsList.map((campground, index) => {
+                        return(
+
+                    <Accordion.Item eventKey={index}>
+                        <Accordion.Header>{campground.name}</Accordion.Header>
+                        <Accordion.Body>
+                            <div className="campground-body">
+                            <img className="activity-image" src={campground.images[0].url} ></img>
+                            <h3>Amenities:</h3>
+                                <p>Campstore: {campground.amenities.campStore}</p>
+                                <p>Dump Station: {campground.amenities.dumpStation}</p>
+                                <p>Food Storage Lockers: {campground.amenities.foodStorageLockers}</p>
+                                <p>Potable Water: {campground.amenities.potableWater[0]}</p>
+                                <p>Showers: {campground.amenities.showers[0]}</p>
+                                <p>Toilets: {campground.amenities.toilets[0]}</p>
+                            <h3>Campsites:</h3>
+                                <p>Rv-Only Sites: {campground.campsites.rvOnly}</p>
+                                <p>Tent-Only Sites: {campground.campsites.tentOnly}</p>
+                                <p>Total Sites: {campground.campsites.totalSites}</p>
+                                <a className="accordion-link" href={campground.url}>More Info</a>
+                            </div>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                        )
+                    
+                    })}
+                    </Accordion>
         </div>
     )
 }

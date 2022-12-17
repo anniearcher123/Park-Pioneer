@@ -27,7 +27,7 @@ const Home = () => {
         <input type="text" onChange={(e) => setQuery(e.target.value)} />
         <input type="submit" value="Search" />
       </form> */}
-      <h1>Explore A National Park: </h1>
+      <h1 className="park-list-header">Explore A National Park: </h1>
       <ParksList />
     </div>
   );
