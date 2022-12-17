@@ -11,6 +11,10 @@ h1 {
   font-family: 'Playfair Display', serif;
 }
 
+h2 {
+  font-family: 'Playfair Display', serif;
+}
+
 .accordion-link {
   color:rgb(34, 34, 34);
   font-family: 'PT Sans Narrow', sans-serif;
@@ -54,13 +58,14 @@ p {
   padding-top: 30px;
   padding-bottom: 20px;
   border-radius: 8px;
-  background-color: white;
+  background-color: rgb(255 255 255 / 85%);
 }
 
 .Auth-form-content {
   padding-left: 12%;
   padding-right: 12%;
 }
+
 
 .Auth-form-title {
   text-align: center;
@@ -283,4 +288,38 @@ a.instagram {
 .campground-body {
   display: grid;
   align-items: center;
+}
+
+#login-container {
+  background-image: url("./images/login-background.jpeg");
+}
+
+
+.calendar-info {
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.date-info {
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.line {
+  border: 1px solid black ;
+}
+
+.modal-footer {
+  max-width: 10vw;
+}
+
+#close-button {
+  max-width: fit-content;
+
+}
+
+.heading {
+  font-family: 'Playfair Display', serif;
+}
+
+.modal-content {
+  background-color: rgb(18 13 13 /75%);
 }

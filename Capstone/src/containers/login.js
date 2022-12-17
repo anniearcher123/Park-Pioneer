@@ -14,7 +14,7 @@ export default function Login (props) {
   }
   
   return (
-    <div className="Auth-form-container">
+    <div className="Auth-form-container" id="login-container">
       <form className="Auth-form" onSubmit={login}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign In</h3>
@@ -44,16 +44,16 @@ export default function Login (props) {
           </div>
 
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-dark">
               Submit
             </button>
           </div>
           <div className="d-flex justify-content-center">
             <p className="forgot-password text-right mt-2 mx-2">
-              <NavLink to="/register">Register</NavLink>
+              <NavLink className="accordion-link" to="/register">Register</NavLink>
             </p>
             <p className="forgot-password text-right mt-2">
-              <NavLink to="/">Home</NavLink>
+              <NavLink className="accordion-link" to="/">Home</NavLink>
             </p>
           </div>
         </div>

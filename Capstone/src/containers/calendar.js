@@ -88,17 +88,17 @@ function MyCalendar() {
         return (
            <div className={`modal-${modalState === true ? 'show' : 'hide'}`}>
               <div className="modal-dialog" role="document">
-                    <div className="modal-content">
-                        <div className="modal-header">
+                    <div className="modal-content col-12">
+                        <div className="modal-header row d-flex justify-content-center">
                             <h5 className="modal-title">{selectedEvent.title}</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={closeModal}>
+                            <button id="close-button" type="button" className="close btn btn-dark justify-content-center" data-dismiss="modal" aria-label="Close" onClick={closeModal}>
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div className="modal-body">
+                        <div className="modal-body row">
                             <form>
                                 <div className="form-group">
-                                    <label for='startDate'>Start Date:</label>
+                                    <label className="heading" for='startDate'>Start Date:</label>
                                     <DatePicker 
                                         id="startDate"
                                         popperPlacement="position-absolute" 
@@ -110,14 +110,15 @@ function MyCalendar() {
                                         timeIntervals={20}
                                         timeCaption="time"
                                         dateFormat="MMMM d, yyyy h:mm aa"
+                                        className="date-info"
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label for="endDate">End Date:</label>
+                                    <label className="heading" for="endDate">End Date:</label>
                                     <DatePicker 
                                         id="endDate"
                                         popperPlacement="position-absolute" 
-                                        className="mb-3" 
+                                        className="mb-3 date-info" 
                                         popperClassName="" 
                                         placeholderText={selectedEvent.end}
                                         selected={updatedEvent.end} 
@@ -131,10 +132,10 @@ function MyCalendar() {
                                 </div>
                             </form>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" className="btn btn-primary" onClick={updateEvent}>Update event</button>
-                            <button type="button" className="btn btn-danger" onClick={deleteEvent}>Delete event</button>
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={closeModal}>Close</button>
+                        <div class="modal-footer row offset-5">
+                            <button type="button" className="heading btn btn-success" onClick={updateEvent}>Update event</button>
+                            <button type="button" className="heading btn btn-danger" onClick={deleteEvent}>Delete event</button>
+                            <button type="button" className="heading btn btn-dark" data-dismiss="modal" onClick={closeModal}>Close</button>
                         </div>
                     </div>
                 </div>
@@ -146,10 +147,11 @@ function MyCalendar() {
         <div>
             <div className="text-center">
                 <h1>My Calendar</h1>
+                <hr className="line"></hr>
                 <h2>Add Event</h2>
                 <div className="d-flex">
                     <div className="col">
-                        <input type="text" required className="" placeholder="Add Title" value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
+                        <input type="text" required className="date-info" placeholder="Add Title" value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
                         
                         <DatePicker 
                             popperPlacement="position-absolute" 
@@ -161,12 +163,13 @@ function MyCalendar() {
                             timeFormat="HH:mm"
                             timeIntervals={20}
                             timeCaption="time"
-                            dateFormat="MMMM d, yyyy h:mm aa"/>
-                            
+                            dateFormat="MMMM d, yyyy h:mm aa"
+                            className="date-info"
+                            />
                             
                         <DatePicker 
                             popperPlacement="position-absolute" 
-                            className="mb-3" 
+                            className="mb-3 date-info" 
                             popperClassName="m-5 position-sticky datePopper" 
                             placeholderText="End Date" 
                             selected={newEvent.end} 
@@ -175,9 +178,10 @@ function MyCalendar() {
                             timeFormat="HH:mm"
                             timeIntervals={20}
                             timeCaption="time"
-                            dateFormat="MMMM d, yyyy h:mm aa"/>
+                            dateFormat="MMMM d, yyyy h:mm aa"
+                            />
 
-                        <button className="btn btn-warning" type="submit" onClick={handleAddEvent}>
+                        <button className="btn btn-success" type="submit" onClick={handleAddEvent}>
                             Add
                         </button>
                     </div>
@@ -189,7 +193,9 @@ function MyCalendar() {
                     startAccessor="start" 
                     endAccessor="end" 
                     onSelectEvent={handleEventSelection}
-                    style={{ height: 500, margin: "50px" }} />
+                    style={{ height: 500, margin: "50px" }} 
+                    className="calendar-info"
+                    />
             </div>
         </div>
     );
