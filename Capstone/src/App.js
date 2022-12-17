@@ -9,7 +9,6 @@ import { AppContext } from "./context/context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ParkPage from "./containers/park-page";
 import CalendarPage from "./containers/calendar-page";
-import SocialFollow from "./SocialFollow";
 
 function App() {
   const { parkName } = useParams();
