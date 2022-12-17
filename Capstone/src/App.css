@@ -323,3 +323,15 @@ a.instagram {
 .modal-content {
   background-color: rgb(18 13 13 /75%);
 }
+
+.weather-info {
+  background-color: rgb(18 13 13/ 75%);
+  color:white;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 30px;
+}
+
+.weather-icon {
+  max-height: 40px;
+}

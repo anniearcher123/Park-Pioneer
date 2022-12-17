@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { AppContext } from "../context/context";
 import Carousel from 'react-bootstrap/Carousel';
 import TreeIcon from "../images/icons8-trees-50.png"
+import Weather from './weather-component';
 
 
 const ParkHeader = () => {
@@ -52,6 +53,7 @@ const ParkHeader = () => {
                     <Carousel.Item>
                         <img id="park-image" className="d-block w-100" src={selectedPark.images[0].url} alt="First slide" />
                         <Carousel.Caption>
+                            <Weather />
                         <h1>{selectedPark?.fullName}</h1>
                         <p>{selectedPark?.description}</p>
                         </Carousel.Caption>
@@ -59,6 +61,7 @@ const ParkHeader = () => {
                     <Carousel.Item>
                         <img id="park-image" className="d-block w-100" src={selectedPark.images[1].url} alt="Second slide" />
                         <Carousel.Caption>
+                        <Weather />
                         <h1>{selectedPark?.fullName}</h1>
                         <p>{selectedPark?.description}</p>
                         </Carousel.Caption>
@@ -66,6 +69,7 @@ const ParkHeader = () => {
                     <Carousel.Item>
                         <img id="park-image" className="d-block w-100" src={selectedPark.images[2].url} alt="Third slide" />
                         <Carousel.Caption>
+                        <Weather />
                         <h1>{selectedPark?.fullName}</h1>
                         <p>{selectedPark?.description}</p>
                         </Carousel.Caption>
@@ -73,6 +77,7 @@ const ParkHeader = () => {
                     <Carousel.Item>
                         <img id="park-image" className="d-block w-100" src={selectedPark.images[3].url} alt="Third slide" />
                         <Carousel.Caption>
+                        <Weather />
                         <h1>{selectedPark?.fullName}</h1>
                         <p>{selectedPark?.description}</p>
                         </Carousel.Caption>
