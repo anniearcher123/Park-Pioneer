@@ -309,7 +309,7 @@ a.instagram {
 }
 
 .modal-footer {
-  max-width: 10vw;
+  max-width: 12vw;
 }
 
 #close-button {
@@ -323,6 +323,14 @@ a.instagram {
 
 .modal-content {
   background-color: rgb(18 13 13 /75%);
+}
+
+#modal-content {
+  margin-top: 30px;
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
 }
 
 .weather-info {
@@ -344,4 +352,8 @@ a.instagram {
 
 .card-header {
   color: white;
+}
+
+#modal-button {
+  margin: 5px;
 }

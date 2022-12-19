@@ -4,6 +4,7 @@ import Amenities from './amenities-component';
 import Activities from './activities-component';
 import Campground from './campground-component';
 import { AppContext } from '../context/context';
+import Footer from './footer-component';
 
 const ParkPage = () => {
 
@@ -26,6 +27,7 @@ const ParkPage = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
 );
 };
