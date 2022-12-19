@@ -10,33 +10,35 @@ export default function Register (props) {
   function handleSubmit(e){
     e.preventDefault();
     if (addUser.password === addUser.verify){
-        fetch('/register', { 
+        fetch('http://localhost:4000/register', { 
             method: 'POST',
-            data: {
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
             firstName: addUser.firstName,
             lastName: addUser.lastName,
-            email: addUser.email,
+            username: addUser.email,
             password: addUser.password
-            }
+            })
         })
-    
         .then((response) => {
             return response.json()
-          }).then((body) => {
-            console.log(body);
           })
-        
-        navigate("/login")
+        .then((body) => {
+            if(body.message === 'Account Created'){
+              alert('Account Created')
+              navigate("/login")
+            } else {
+              alert('Registration Failed')
+            }
+          })
     }
     else {
         alert('Password does not match')
-    }
+    }}
 
-    
-}
 
   return (
-    <div className="Auth-form-container">
+    <div className="Auth-form-container" id="login-container">
       <form className="Auth-form" onSubmit={handleSubmit}>
         <div className="Auth-form-content">
             <h3 className="Auth-form-title">Register</h3>

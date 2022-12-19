@@ -1,7 +1,15 @@
 'use strict';
-const {
+const { 
+  Sequelize,
   Model
 } = require('sequelize');
+
+const sequelize = new Sequelize("capstone", "anniearcher", null, {
+  host: "127.0.0.1",
+  port: 5432,
+  dialect: 'postgres',
+  logging: false
+})
 module.exports = (sequelize, DataTypes) => {
   class USER extends Model {
     /**
