@@ -17,7 +17,7 @@ app.post('/register', async(req, res, next)=>{
             lastName: req.body.lastName,
             username: req.body.username,
             password : await bcrypt.hash(req.body.password, hashPassword),
-            events : '[]'
+            events : ''
         };
         created_user = await db.USER.create(item); 
         res.json({message:'Account Created'})
@@ -44,21 +44,14 @@ app.post('/register', async(req, res, next)=>{
     }
   )
 
-//   app.put('/', async(req, res, next) =>{
-//     try {
-//         const user = await db.USER.findOne({ where : {username: req.body.username} });
-//         if (user) {
-//             user.events = req.body.events
-
-//             await user.save();
-//             res.json({message:'Calendar updated'})
-//         } else {
-//             res.json({message: 'User not found'})
-//         }
-//         }catch{
-//             res.json('error')
-//         }
-//     })
+  app.post('/', async(req, res, next) =>{
+    try {
+        const user = await db.USER.findOne({ where : {username: req.body.username} });
+        console.log(user)
+    }catch{
+        res.json({message: 'Nope'})
+    }
+  })
         
             
 

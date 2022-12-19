@@ -58,6 +58,7 @@ function MyCalendar() {
             setAddEvent({ title: "", start: "", end: "" })
             console.log(allEvents)
             closeModal()
+            addToDB()
             } else {
                 alert('Complete all fields')
                 console.log(allEvents)
@@ -78,6 +79,7 @@ function MyCalendar() {
         let deleteThis = allEvents.filter(x => x !== selectedEvent)
         setAllEvents(deleteThis);
         closeModal()
+        addToDB()
     }
 
     function updateEvent () {
@@ -86,6 +88,7 @@ function MyCalendar() {
         console.log(updateThis)
         setAllEvents(updateThis)
         closeModal()
+        addToDB()
     }
 
     function closeModal () {
@@ -93,6 +96,23 @@ function MyCalendar() {
         setShowModal(false)
         setShowUpdateModal(false)
     }
+
+    function addToDB () {
+            fetch('http://localhost:4000/', { 
+                  method: 'POST',
+                  headers: {'Content-Type':'application/json'},
+                  body: JSON.stringify({
+                    username: username,
+                    events: allEvents})
+            })
+            .then((response) => {
+              return response.json()
+            })
+            .then((body) => {
+              alert(body.message)
+            })
+          }
+    
 
     const UpdateModal = () => {
         return (
