@@ -86,11 +86,11 @@ function MyCalendar() {
 
     const Modal = () => {
         return (
-           <div className={`modal-${modalState === true ? 'show' : 'hide'}`}>
+           <div className={`modal-${modalState === true ? 'show' : 'hide'}`} id="modal-content">
               <div className="modal-dialog" role="document">
                     <div className="modal-content col-12">
                         <div className="modal-header row d-flex justify-content-center">
-                            <h5 className="modal-title">{selectedEvent.title}</h5>
+                            <h3 className="modal-title">{selectedEvent.title}</h3>
                             <button id="close-button" type="button" className="close btn btn-dark justify-content-center" data-dismiss="modal" aria-label="Close" onClick={closeModal}>
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -132,10 +132,10 @@ function MyCalendar() {
                                 </div>
                             </form>
                         </div>
-                        <div class="modal-footer row offset-5">
-                            <button type="button" className="heading btn btn-success" onClick={updateEvent}>Update event</button>
-                            <button type="button" className="heading btn btn-danger" onClick={deleteEvent}>Delete event</button>
-                            <button type="button" className="heading btn btn-dark" data-dismiss="modal" onClick={closeModal}>Close</button>
+                        <div class="modal-footer row d-flex justify-content-center">
+                            <button id="modal-button" type="button" className="heading btn btn-success" onClick={updateEvent}>Update event</button>
+                            <button id="modal-button" type="button" className="heading btn btn-danger" onClick={deleteEvent}>Delete event</button>
+                            <button id="modal-button" type="button" className="heading btn btn-dark" data-dismiss="modal" onClick={closeModal}>Close</button>
                         </div>
                     </div>
                 </div>
