@@ -110,7 +110,7 @@ label {
 .jumbotron {
   display: grid;
   position: relative;
-  min-height: 40vh;
+  min-height: 60vh;
   max-width: 100%;
   text-align: center;
   font-family: 'Playfair Display', serif;
@@ -125,9 +125,9 @@ label {
 
 .jumbotron::before {
   content: "";
-  background: url("./images/north-cascades-national-park-picture-lake-mount-shuksan_4x3.webp");
+  background: url("./images/Mount-Rainier-National-Park-GettyImages-1015099244.webp");
   background-repeat: no-repeat;
-  background-position: center center;
+
   align-items: center;
   background-size: 100%;
   opacity: 0.7;
@@ -167,7 +167,7 @@ label {
 
 .jumbotronLoggedIn::before {
   content: "";
-  background: url("./images/north-cascades-national-park-picture-lake-mount-shuksan_4x3.webp");
+  background: url("./images//Mount-Rainier-National-Park-GettyImages-1015099244.webp");
   background-repeat: no-repeat;
   background-position: center center;
   align-items: center;
@@ -180,6 +180,8 @@ label {
   position: absolute;
   z-index: -1;
 }
+
+
 
 .parks-list {
   display: grid;
@@ -201,6 +203,7 @@ label {
   z-index: -1;
   margin-left: 20px;
   margin-right: 20px;
+  margin-top: 30px;
 }
 
 .datePopper {
@@ -229,15 +232,13 @@ h6 {
 
 
 footer {
-  position: fixed;
-  background-color:rgba(18, 13, 13, 0.573);
+  color: white;
   text-align: center;
   margin-top: auto;
-  padding: 8px;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 8px;
+  padding: 5px;
   text-align: center;
 }
 .button {
@@ -308,7 +309,7 @@ a.instagram {
 }
 
 .modal-footer {
-  max-width: 10vw;
+  max-width: 12vw;
 }
 
 #close-button {
@@ -324,6 +325,14 @@ a.instagram {
   background-color: rgb(18 13 13 /75%);
 }
 
+#modal-content {
+  margin-top: 30px;
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+}
+
 .weather-info {
   background-color: rgb(18 13 13/ 75%);
   color:white;
@@ -334,4 +343,17 @@ a.instagram {
 
 .weather-icon {
   max-height: 40px;
+}
+
+#footer-heading {
+  font-family: 'Playfair Display', serif;
+}
+
+
+.card-header {
+  color: white;
+}
+
+#modal-button {
+  margin: 5px;
 }
