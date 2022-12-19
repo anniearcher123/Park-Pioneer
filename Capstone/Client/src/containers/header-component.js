@@ -50,8 +50,7 @@ const Header = () => {
                 <h1 id="jumbotron-title" className="display-4">Plan your National Parks Trip</h1>
                 <p className="lead">
                 We've compiled details about campgrounds, activities, and more so
-                that you don't have to. Sync to your Google Calendar for easy
-                access to your itinerary.
+                that you don't have to. Put it all on your own customizable planning 
                 </p>
             </div> 
         </div>: 
