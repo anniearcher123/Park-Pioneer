@@ -6,9 +6,11 @@ import TreeIcon from "../images/icons8-trees-50.png"
 
 
 const Header = () => {
-  const { isLoggedIn, SetIsLoggedIn } = useContext(AppContext);
+  const { isLoggedIn, SetIsLoggedIn, setUsername, setAllEvents } = useContext(AppContext);
   function logout() {
     SetIsLoggedIn(false);
+    setUsername(undefined);
+    setTimeout(setAllEvents([]),300);
   }
 
   return (
@@ -17,29 +19,29 @@ const Header = () => {
         <img className="logo" src={TreeIcon}></img>
         <a className="navbar-brand">Park Pioneer</a>
         <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav">
-            <li className="nav-item ">
-            <NavLink className="nav-link" to="/">
-                Home
-            </NavLink>
-            </li>
-            <li className="nav-item">
-            <NavLink className="nav-link" to="/calendar">
-                My Calendar
-            </NavLink>
-            </li>
-            <li className="nav-item">
-            <NavLink className="nav-link" to="/discover">
-                Live Feeds
-            </NavLink>
-            </li>
-            {isLoggedIn ? 
-            <li className="nav-item">
-            <NavLink className="nav-link" onClick={logout} >
-                Logout
-            </NavLink>
-            </li> : null}
-        </ul>
+            <ul className="navbar-nav">
+                <li className="nav-item ">
+                <NavLink className="nav-link" to="/">
+                    Home
+                </NavLink>
+                </li>
+                <li className="nav-item">
+                <NavLink className="nav-link" to="/calendar">
+                    My Calendar
+                </NavLink>
+                </li>
+                <li className="nav-item">
+                <NavLink className="nav-link" to="/discover">
+                    Live Feeds
+                </NavLink>
+                </li>
+                {isLoggedIn ? 
+                <li className="nav-item">
+                <NavLink className="nav-link" onClick={logout} >
+                    Logout
+                </NavLink>
+                </li> : null}
+            </ul>
         </div>
         </nav>
         {isLoggedIn ? 

@@ -3,15 +3,34 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { AppContext } from "../context/context";
 
 export default function Login (props) {
-  const {isLoggedIn, SetIsLoggedIn} = useContext(AppContext);
+  const {isLoggedIn, SetIsLoggedIn, allEvents, setAllEvents, username, setUsername} = useContext(AppContext);
   const navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState([])
   
-  function login(){
-    console.log(currentUser)
-    SetIsLoggedIn(true)
-    navigate("/")
-  }
+  function login(e){
+    e.preventDefault();
+      fetch('http://localhost:4000/login', { 
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+            username: currentUser.email,
+            password: currentUser.password
+            })
+        })
+      .then((response) => {
+            return response.json()
+          })
+      .then((body) => {
+            if(body.message === 'wrong password'){
+              alert('Password Incorrect')
+            } else {
+              setAllEvents(body.events)
+              setUsername(body.username)
+              SetIsLoggedIn(true)
+              navigate("/")
+            }
+          })
+    }
   
   return (
     <div className="Auth-form-container" id="login-container">
