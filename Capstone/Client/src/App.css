@@ -1,3 +1,4 @@
+/* General CSS */
 .App {
   background-color: white;
 }
@@ -15,72 +16,16 @@ h2 {
   font-family: 'Playfair Display', serif;
 }
 
-.accordion-link {
-  color:rgb(34, 34, 34);
-  font-family: 'PT Sans Narrow', sans-serif;
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: larger;
-}
-
-.accordion-link:hover {
-  color: green;
-}
-
 p {
   font-family: 'PT Sans Narrow', sans-serif;
 }
 
-.accordion-body {
-  font-family: 'PT Sans Narrow', sans-serif;
-  font-size: medium;
-  font-weight: 500;
-}
-
-
-.park-list-header {
+h6 {
   display: grid;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.Auth-form-container {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
 }
 
-.Auth-form {
-  width: 420px;
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  border-radius: 8px;
-  background-color: rgb(255 255 255 / 85%);
-}
-
-.Auth-form-content {
-  padding-left: 12%;
-  padding-right: 12%;
-}
-
-
-.Auth-form-title {
-  text-align: center;
-  margin-bottom: 1em;
-  font-size: 24px;
-  color: rgb(34, 34, 34);
-  font-weight: 800;
-}
-
-label {
-  font-size: 14px;
-  font-weight: 600;
-  color: rgb(34, 34, 34);
-}
-
+/* Header */
 .home-header {
   color: white;
   background-color: black;
@@ -143,19 +88,6 @@ label {
   z-index: -1;
 }
 
-#park-info {
-  font-family: 'PT Sans Narrow', sans-serif;
-  color: black;
-  font-weight: bolder;
-}
-
-#more-info {
-  font-family: 'PT Sans Narrow', sans-serif;
-  color: black;
-  font-weight: bolder;
-}
-
-
 .jumbotronLoggedIn {
   display: grid;
   position: relative;
@@ -182,54 +114,7 @@ label {
   z-index: -1;
 }
 
-.parks-list {
-  display: grid;
-  text-align: center;
-  align-items: center;
-  font-family: 'PT Sans Narrow', sans-serif;
-}
-
-.liveCards{
-  height: 25vh;
-  overflow: scroll;
-}
-
-
-.content {
-  position: sticky;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 30px;
-}
-
-.datePopper {
-  right: 0;
-  left: 0;
-}
-
-h6 {
-  display: grid;
-  align-items: center;
-
-}
-
-.info-section {
-  display: grid;
-  margin-top: 100px;
-}
-
-.info-title {
-  background-color: black;
-  color: #eee;
-  border-radius: 4px;
-  padding: 10px;
-  margin-bottom: 0;
-}
-
-
+/* Footer */
 footer {
   color: white;
   text-align: center;
@@ -240,6 +125,7 @@ footer {
   padding: 5px;
   text-align: center;
 }
+
 .button {
   background-color: blue;
 }
@@ -272,6 +158,68 @@ a.instagram {
   color: black;
 }
 
+/* Home Page */
+.park-list-header {
+  display: grid;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.parks-list {
+  display: grid;
+  text-align: center;
+  align-items: center;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+#footer-heading {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Park Page */
+.accordion-link {
+  color:rgb(34, 34, 34);
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: larger;
+}
+
+.accordion-link:hover {
+  color: #043927;
+}
+
+.accordion-body {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: medium;
+  font-weight: 500;
+}
+
+#park-info {
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: black;
+  font-weight: bolder;
+}
+
+#more-info {
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: black;
+  font-weight: bolder;
+}
+
+.info-section {
+  display: grid;
+  margin-top: 100px;
+}
+
+.info-title {
+  background-color: black;
+  color: #eee;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 0;
+}
+
 .camp-image {
   max-width: 150px;
   max-height: 150px;
@@ -290,10 +238,36 @@ a.instagram {
   align-items: center;
 }
 
-#login-container {
-  background-image: url("./images/login-background.jpeg");
+.weather-info {
+  background-color: rgb(18 13 13/ 75%);
+  color:white;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 30px;
 }
 
+.weather-icon {
+  max-height: 40px;
+}
+
+/* Live Feed Page */
+
+/* Calendar Page */
+
+.liveCards{
+  height: 25vh;
+  overflow: scroll;
+}
+
+.content {
+  position: sticky;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+}
 
 .calendar-info {
   font-family: 'PT Sans Narrow', sans-serif;
@@ -332,22 +306,10 @@ a.instagram {
   font-family: 'Playfair Display', serif;
 }
 
-.weather-info {
-  background-color: rgb(18 13 13/ 75%);
-  color:white;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 30px;
+.datePopper {
+  right: 0;
+  left: 0;
 }
-
-.weather-icon {
-  max-height: 40px;
-}
-
-#footer-heading {
-  font-family: 'Playfair Display', serif;
-}
-
 
 .card-header {
   color: white;
@@ -356,6 +318,50 @@ a.instagram {
 #modal-button {
   margin: 5px;
 }
+
+/* Login/Registration Page */
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Auth-form {
+  width: 420px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: rgb(255 255 255 / 85%);
+}
+
+.Auth-form-content {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+
+.Auth-form-title {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 24px;
+  color: rgb(34, 34, 34);
+  font-weight: 800;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+}
+
+#login-container {
+  background-image: url("./images/login-background.jpeg");
+}
+
+/* Media Queries */
 
 @media screen  and (max-width: 600px) {
   
