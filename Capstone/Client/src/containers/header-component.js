@@ -2,7 +2,9 @@ import React, { useContext, useEffect } from "react";
 import { AppContext } from "../context/context";
 import { NavLink } from "react-router-dom";
 import TreeIcon from "../images/icons8-trees-50.png"
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 
 const Header = () => {
@@ -14,43 +16,42 @@ const Header = () => {
   }
 
   return (
-    <div>     
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark home-header">
+    <div>   
+        <Navbar bg="dark" expand="lg" variant="dark">
+      <Container className="nav-container">
+        <Navbar.Brand to="/" className="park-pioneer">
         <img className="logo" src={TreeIcon}></img>
-        <a className="navbar-brand">Park Pioneer</a>
-        <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-                <li className="nav-item ">
-                <NavLink className="nav-link" to="/">
-                    Home
-                </NavLink>
-                </li>
-                <li className="nav-item">
-                <NavLink className="nav-link" to="/calendar">
-                    My Calendar
-                </NavLink>
-                </li>
-                <li className="nav-item">
-                <NavLink className="nav-link" to="/discover">
-                    Live Feeds
-                </NavLink>
-                </li>
-                {isLoggedIn ? 
-                <li className="nav-item">
-                <NavLink className="nav-link" onClick={logout} >
-                    Logout
-                </NavLink>
-                </li> : null}
-            </ul>
-        </div>
-        </nav>
+            Park Pioneer
+            </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+            <NavLink className="nav-link" to="/">
+                Home
+            </NavLink>
+            <NavLink className="nav-link" to="/calendar">
+                My Calendar
+            </NavLink>
+            <NavLink className="nav-link" to="/discover">
+                Live Feeds
+            </NavLink>
+            {isLoggedIn ? 
+            <div>
+            <NavLink className="nav-link" onClick={logout} >
+                Logout
+            </NavLink>
+            </div> : null}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
         {isLoggedIn ? 
         <div className="jumbotronLoggedIn">
             <div className="content">
                 <h1 id="jumbotron-title" className="display-4">Plan your National Parks Trip</h1>
                 <p className="lead">
                 We've compiled details about campgrounds, activities, and more so
-                that you don't have to. Put it all on your own customizable planning 
+                that you don't have to. Put it all on your own customizable calendar for optimal planning. 
                 </p>
             </div> 
         </div>: 
@@ -58,9 +59,8 @@ const Header = () => {
             <div className="content">
             <h1 className="display-4">Plan your National Parks Trip</h1>
             <p className="lead">
-                We've compiled details about campgrounds, activities, and more so
-                that you don't have to. Sync to your Google Calendar for easy
-                access to your itinerary.
+            We've compiled details about campgrounds, activities, and more so
+                that you don't have to. Put it all on your own customizable calendar for optimal planning. 
             </p>
             </div>
             <hr className="my-4" />
