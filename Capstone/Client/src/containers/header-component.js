@@ -9,15 +9,19 @@ import Navbar from 'react-bootstrap/Navbar';
 
 
 const Header = () => {
-  const { isLoggedIn, SetIsLoggedIn, setUsername, setAllEvents } = useContext(AppContext);
+  const { isLoggedIn, SetIsLoggedIn, setUsername, setAllEvents, username } = useContext(AppContext);
   const navigate = useNavigate()
-  
+
   function logout() {
     SetIsLoggedIn(false);
     setUsername(undefined);
     setTimeout(setAllEvents([]),300);
-    navigate("/")
+    console.log(username)
+    console.log(isLoggedIn)
   }
+
+  
+
 
   return (
     <div>   
@@ -41,7 +45,7 @@ const Header = () => {
             </NavLink>
             {isLoggedIn ? 
             <div>
-            <NavLink className="nav-link" onClick={logout} >
+            <NavLink className="nav-link" to="/" onClick={logout} >
                 Logout
             </NavLink>
             </div> : null}

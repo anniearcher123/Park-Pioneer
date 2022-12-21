@@ -21,7 +21,24 @@ function App() {
   const [activitiesList, setActivitiesList] = useState();
   const [username, setUsername] = useState(undefined);
   
-
+ useEffect(() => {
+  if (allEvents.length > 0 && username) {
+    fetch('http://localhost:4000/', { 
+                  method: 'POST',
+                  headers: {'Content-Type':'application/json'},
+                  body: JSON.stringify({
+                    username: username,
+                    events: allEvents})
+            })
+            .then((response) => {
+              return response.json()
+            })
+            .then((body) => {
+              alert(body.message)
+            })
+  }
+ }, [allEvents])
+ 
   return (
     <AppContext.Provider value={{isLoggedIn, SetIsLoggedIn, newEvent, setNewEvent, allEvents, setAllEvents, nationalParkList, setNationalParkList, selectedPark, setSelectedPark, username, setUsername}}>
       <BrowserRouter>

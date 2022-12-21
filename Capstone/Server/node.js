@@ -17,7 +17,7 @@ app.post('/register', async(req, res, next)=>{
             lastName: req.body.lastName,
             username: req.body.username,
             password : await bcrypt.hash(req.body.password, hashPassword),
-            events : ''
+            events : '[]'
         };
         created_user = await db.USER.create(item); 
         res.json({message:'Account Created'})
@@ -29,6 +29,7 @@ app.post('/register', async(req, res, next)=>{
   app.post('/login', async(req, res, next) =>{
     try {
         const user = await db.USER.findOne({ where : {username: req.body.username} });
+        console.log(user)
         if (user) {
             const validAuth = await bcrypt.compare(req.body.password, user.password);
             if (validAuth) {
@@ -45,7 +46,7 @@ app.post('/register', async(req, res, next)=>{
             }
         }}
         catch {
-            alert('failed')
+            res.json({message:'failed'})
         }
     }
   )
