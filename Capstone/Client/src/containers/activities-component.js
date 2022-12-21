@@ -87,7 +87,7 @@ function handleAddEvent() {
                             <img className="row activity-image" src={activity.images[0]?.url} ></img>
                             <div className="row">{activity.shortDescription}</div>
                             <br/>
-                            <div className="row"><a className="accordion-link " href={activity.url}>More Info</a></div>
+                            <div className="row"><a className="accordion-link"  target="_blank" href={activity.url}>More Info</a></div>
                             <div className="row"><button type="button" id="accordion-button" onClick={() => openModal(activity.title)} className="btn btn-dark">Add to Calendar</button></div>
                         </Accordion.Body>
                     </Accordion.Item>
