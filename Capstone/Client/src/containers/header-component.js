@@ -1,18 +1,22 @@
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "../context/context";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import TreeIcon from "../images/icons8-trees-50.png"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 
+
 const Header = () => {
   const { isLoggedIn, SetIsLoggedIn, setUsername, setAllEvents } = useContext(AppContext);
+  const navigate = useNavigate()
+  
   function logout() {
     SetIsLoggedIn(false);
     setUsername(undefined);
     setTimeout(setAllEvents([]),300);
+    navigate("/")
   }
 
   return (

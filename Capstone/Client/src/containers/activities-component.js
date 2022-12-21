@@ -28,7 +28,7 @@ useEffect(() => {
 }, []);
 
 function openModal(e){
-    if (username !== undefined){
+    if (username){
         setModalData(e)
         setAddEvent({title:selectedPark.fullName+': '+ e, start:"", end:""})
         setShowModal(true)
