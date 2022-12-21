@@ -58,6 +58,7 @@ function MyCalendar() {
             setAddEvent({ title: "", start: "", end: "" })
             console.log(allEvents)
             closeModal()
+            addToDB()
             } else {
                 alert('Complete all fields')
                 console.log(allEvents)
@@ -78,6 +79,7 @@ function MyCalendar() {
         let deleteThis = allEvents.filter(x => x !== selectedEvent)
         setAllEvents(deleteThis);
         closeModal()
+        addToDB()
     }
 
     function updateEvent () {
@@ -86,6 +88,7 @@ function MyCalendar() {
         console.log(updateThis)
         setAllEvents(updateThis)
         closeModal()
+        addToDB()
     }
 
     function closeModal () {
@@ -93,6 +96,23 @@ function MyCalendar() {
         setShowModal(false)
         setShowUpdateModal(false)
     }
+
+    function addToDB () {
+            fetch('http://localhost:4000/', { 
+                  method: 'POST',
+                  headers: {'Content-Type':'application/json'},
+                  body: JSON.stringify({
+                    username: username,
+                    events: allEvents})
+            })
+            .then((response) => {
+              return response.json()
+            })
+            .then((body) => {
+              alert(body.message)
+            })
+          }
+    
 
     const UpdateModal = () => {
         return (
@@ -149,6 +169,20 @@ function MyCalendar() {
                 </div>
             </Modal>
         )
+    }
+
+    function styleEvents() {
+        var style = {
+            backgroundColor: '#043927',
+            borderRadius: '5px',
+            opacity: 0.8,
+            color: 'white',
+            border: '0px',
+            display: 'block'
+        };
+        return {
+            style: style
+        };
     }
 
     return (
@@ -228,7 +262,8 @@ function MyCalendar() {
                     startAccessor="start" 
                     endAccessor="end" 
                     onSelectEvent={handleEventSelection}
-                    style={{ height: 500, margin: "50px" }} 
+                    eventPropGetter={styleEvents}
+                    style={{ height: 500, margin: "50px"}} 
                     className="calendar-info"
                     />
         </div>

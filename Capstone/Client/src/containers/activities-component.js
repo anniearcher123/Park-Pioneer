@@ -29,8 +29,8 @@ useEffect(() => {
 
 function openModal(e){
     if (username !== undefined){
-        setAddEvent({title:selectedPark.fullName+': '+ modalData, start:"", end:""})
-        setModalData('')
+        setModalData(e)
+        setAddEvent({title:selectedPark.fullName+': '+ e, start:"", end:""})
         setShowModal(true)
     } else {
         alert('Please Log In!')
@@ -43,6 +43,7 @@ function closeModal(){
     setShowModal(false)
     console.log('closed')
 }
+
 function handleAddEvent() {
     console.log(addEvent)
     if (addEvent.start !== "" && addEvent.end !== ""){
@@ -68,10 +69,27 @@ function handleAddEvent() {
     setAllEvents([...allEvents, addEvent]);
     setAddEvent({ title: "", start: "", end: "" })
     closeModal()
+    addToDB()
 } else {
         alert('Complete all fields')
         console.log(addEvent)
     }
+}
+
+function addToDB () {
+    fetch('http://localhost:4000/', { 
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({
+            username: username,
+            events: allEvents})
+    })
+    .then((response) => {
+    return response.json()
+    })
+    .then((body) => {
+    alert(body.message)
+    })
 }
 
         return(

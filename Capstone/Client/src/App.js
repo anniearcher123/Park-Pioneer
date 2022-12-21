@@ -20,24 +20,6 @@ function App() {
   const [selectedPark, setSelectedPark] = useState([]);
   const [activitiesList, setActivitiesList] = useState();
   const [username, setUsername] = useState(undefined);
-
-  // useEffect(() => {
-  //   if(username){
-  //     fetch('http://localhost:4000/', { 
-  //           method: 'PUT',
-  //           headers: {'Content-Type':'application/json'},
-  //           body: JSON.stringify({
-  //             username: username,
-  //             events: allEvents})
-  //     })
-  //     .then((response) => {
-  //       return response.json()
-  //     })
-  //     .then((body) => {
-  //       alert(body.message)
-  //     })
-  //   }
-  // },[allEvents])
   
 
   return (
