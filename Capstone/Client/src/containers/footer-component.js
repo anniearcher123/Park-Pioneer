@@ -30,16 +30,20 @@ const Footer = () => {
             Useful links
           </h6>
           <p>
-            <a href="#!" className="text-reset">National Park Services</a>
+            <a href="https://www.nps.gov/index.htm"  target="_blank" className="text-reset">National Park Services</a>
           </p>
           <p>
-            <a href="#!" className="text-reset">My Calendar</a>
+          <NavLink className="nav-link" to="/calendar">
+                My Calendar
+            </NavLink>
           </p>
           <p>
-            <a href="#!" className="text-reset">Live Feeds</a>
+          <NavLink className="nav-link" to="/discover">
+                Live Feeds
+            </NavLink>
           </p>
           <p>
-            <a href="#!" className="text-reset">Register</a>
+          <NavLink className="nav-link" to="/register">Register</NavLink>
           </p>
         </div>
 

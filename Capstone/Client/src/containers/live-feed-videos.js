@@ -2806,7 +2806,7 @@ const LiveVideos = () => {
                                     <div className="card-body row overflow-scroll" >
                                         <p>{video.description}</p>
                                     </div>
-                                    <a href={video.url} target='blank' className="btn btn-dark row">View</a>
+                                    <a href={video.url} target='_blank' className="btn btn-dark row">View</a>
                                 </div>
                             </div>
                             )

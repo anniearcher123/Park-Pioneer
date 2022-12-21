@@ -42,7 +42,7 @@ useEffect(() => {
                                 <p>Rv-Only Sites: {campground.campsites.rvOnly}</p>
                                 <p>Tent-Only Sites: {campground.campsites.tentOnly}</p>
                                 <p>Total Sites: {campground.campsites.totalSites}</p>
-                                <a className="accordion-link" href={campground.url}>More Info</a>
+                                <a className="accordion-link" target="_blank" href={campground.url}>More Info</a>
                             </div>
                         </Accordion.Body>
                     </Accordion.Item>

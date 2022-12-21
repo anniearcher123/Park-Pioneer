@@ -23,15 +23,15 @@ console.log(weatherList);
     return(
         <div className="row weather-info">
             <h1>Weather Info:</h1>
-            <div className="col-sm conditions">
+            <div className="col conditions" id="weather-individ" >
                 <img className="weather-icon" src={weatherList.condition?.icon} ></img>
                 <p>{weatherList.condition?.text}</p>
             </div>
-            <div className="col-sm">
+            <div className="col" id="weather-individ">
             <h3>{weatherList.temp_f}°f</h3>
             <p>Temperature:</p>
             </div>
-            <div className="col-sm">
+            <div className="col" id="weather-individ">
             <h3>{weatherList.precip_in} in.</h3>
             <p>Precipitation:</p>
             </div>
