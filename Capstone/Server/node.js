@@ -35,9 +35,11 @@ app.post('/register', async(req, res, next)=>{
                 res.json(
                     {
                         ...user,
+                        username: user.username,
                         events: JSON.parse(user.events)
                     }
                 )
+                console.log(user)
             } else {
                 res.json({message: 'wrong password'})
             }
