@@ -28,7 +28,6 @@ export default function Login (props) {
               setUsername(body.username)
               SetIsLoggedIn(true)
               navigate("/")
-              console.log(body.username)
             }
           })
     }

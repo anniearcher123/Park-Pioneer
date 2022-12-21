@@ -69,7 +69,6 @@ function handleAddEvent() {
     setAllEvents([...allEvents, addEvent]);
     setAddEvent({ title: "", start: "", end: "" })
     closeModal()
-    addToDB()
 } else {
         alert('Complete all fields')
         console.log(addEvent)
