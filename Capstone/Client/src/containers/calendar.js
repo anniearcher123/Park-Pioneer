@@ -171,6 +171,20 @@ function MyCalendar() {
         )
     }
 
+    function styleEvents() {
+        var style = {
+            backgroundColor: '#043927',
+            borderRadius: '5px',
+            opacity: 0.8,
+            color: 'white',
+            border: '0px',
+            display: 'block'
+        };
+        return {
+            style: style
+        };
+    }
+
     return (
         <div>
             <div className="text-center">
@@ -248,7 +262,8 @@ function MyCalendar() {
                     startAccessor="start" 
                     endAccessor="end" 
                     onSelectEvent={handleEventSelection}
-                    style={{ height: 500, margin: "50px" }} 
+                    eventPropGetter={styleEvents}
+                    style={{ height: 500, margin: "50px"}} 
                     className="calendar-info"
                     />
         </div>

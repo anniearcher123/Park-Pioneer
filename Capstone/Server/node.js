@@ -32,7 +32,12 @@ app.post('/register', async(req, res, next)=>{
         if (user) {
             const validAuth = await bcrypt.compare(req.body.password, user.password);
             if (validAuth) {
-                res.json(user)
+                res.json(
+                    {
+                        ...user,
+                        events: JSON.parse(user.events)
+                    }
+                )
             } else {
                 res.json({message: 'wrong password'})
             }
@@ -40,15 +45,21 @@ app.post('/register', async(req, res, next)=>{
         catch {
             alert('failed')
         }
-
     }
   )
 
   app.post('/', async(req, res, next) =>{
     try {
-        const user = await db.USER.findOne({ where : {username: req.body.username} });
-        console.log(user)
-    }catch{
+        console.log(req.body.events)
+        const thisUser = req.body.username
+        const thisEvents = JSON.stringify(req.body.events);
+        const item = {
+            events: thisEvents
+        }
+        db.USER.update(item, {where: {username: thisUser}})
+        res.json({message:'success'})
+    }catch(ex){
+        console.log(ex)
         res.json({message: 'Nope'})
     }
   })
