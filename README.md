@@ -33,9 +33,9 @@ The minimum viable product for this project was a web page that displayed Nation
 
 
 ## Dev Team
-* [Annie Archer](github.com/anniearcher123)
-* [Joseph George](github.com/BreadJG)
-* [Taylor Matthis](github.com/Tayjanee)
+* [Annie Archer](https://github.com/anniearcher123)
+* [Joseph George](https://github.com/BreadJG)
+* [Taylor Matthis](https://github.com/Tayjanee)
 	
 ## Setup
 To run this project, install it locally using npm:
