@@ -1,19 +1,37 @@
 # Park Pioneer
 ## Table of contents
 * [General info](#general-info)
-* [Technologies](#technologies)
+* [Tech Stack](#tech-stack)
 * [Setup](#setup)
 
-## General info
-This project takes information from the NPS.gov API and uses it to make planning your National Park trip more convenient. You can select a national park and view the amenities, campgrounds, and activities for that park. You can also add the activities that you want to do to your customizable calendar, as well as other custom events. This project was created by Annie Archer, Joseph George, and Taylor Mathis as our final Capstone Project for the Digital Crafts Part-Time Cohort.
+## General Info
+Park Pioneer is a website built for National Park explorers who want to plan their trips ahead of time in order to fully enjoy their experience in nature. This website provides the user with an easy to navigate source of information for whatever National Park that they choose. The user will be able to choose a national park and view the weather, amenities, campground information, and activities for their park. The user can then add any events or activities to a fully customizable calendar, where you can make edits to the date and time of events if needed. 
 	
-## Technologies
+## Tech Stack
 Project is created with:
 * HTML/CSS
 * React Bootstrap
 * React/Context
 * Node.js
 * PostgresSQL/Sequelize
+
+## Minimum Viable Product
+The minimum viable product for this project was a web page that displayed National Parks, listing the different campgrounds and activities that you can then add to a calendar. 
+
+## Stretch Goals Completed
+* Adding an amenities section to display on the park page
+* Displaying the current weather using the longitude and latitude from the NPS.gov API
+
+## Stretch Goals To Be Completed
+* Using the Google Calendar API to sync events to your Google Calendar for ease of access
+* Creating a function to share your calendar with other people if you are traveling with a group
+* Creating a like feature where you can save activities or campgrounds for later
+
+
+## Dev Team
+* [Annie Archer](#https://github.com/anniearcher123)
+* [Joseph George](#https://github.com/BreadJG)
+* [Taylor Matthis](#https://github.com/Tayjanee)
 	
 ## Setup
 To run this project, install it locally using npm:
