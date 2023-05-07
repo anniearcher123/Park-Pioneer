@@ -22,6 +22,7 @@ Users can use all the features of the site, but nothing will be saved until they
 ## Tech Stack
 Project is created with:
 * HTML/CSS
+* Javascript
 * React Bootstrap
 * React/Context
 * Node.js
