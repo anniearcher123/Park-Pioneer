@@ -9,7 +9,15 @@
 * [Setup](#setup)
 
 ## General Info
-Park Pioneer is a website built for National Park explorers who want to plan their trips ahead of time in order to fully enjoy their experience in nature. This website provides the user with an easy to navigate source of information for whatever National Park that they choose. The user will be able to choose a national park and view the weather, amenities, campground information, and activities for their park. The user can then add any events or activities to a fully customizable calendar, where you can make edits to the date and time of events if needed. 
+"Park Pioneer" is a web application created by a team using HTML, CSS, Javascript, React/Context, PostgresSQL/Sequelize, and Node.js. The application includes several features that cater to national park enthusiasts.
+
+The application includes a sign-in/sign-up page that enables users to create an account and save information to their calendar. Users can browse a list of all national parks and click on links to view specific national park pages. The national park pages include current weather information, a list of amenities, campgrounds, and activities that users can add to their customizable calendar.
+
+"Park Pioneer" also features a Live Feed page that provides links to some of the most viewed live feed cameras in various national parks.
+
+Users can use all the features of the site, but nothing will be saved until they have created an account and logged in. Once logged in, users can add activities from the parks page or create their own written activity to their calendar. The time and day can then be adjusted on the calendar page.
+
+"Park Pioneer" provides a comprehensive platform for national park enthusiasts to plan their trips and stay informed about their favorite parks.
 	
 ## Tech Stack
 Project is created with:
